@@ -13,6 +13,10 @@
       "continue": true
     },
     {
+      "src": "/vite.svg",
+      "dest": "/vite.svg"
+    },
+    {
       "handle": "filesystem"
     },
     {
