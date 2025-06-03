@@ -14,38 +14,54 @@ const TermsPage: React.FC = () => {
       </Button>
 
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">
-          Terms of Service (ai wrote this lol i have no clue)
-        </h1>
+        <h1 className="text-3xl font-bold mb-8">Terms of Service</h1>
 
         <div className="prose prose-invert max-w-none space-y-8">
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">
+              Educational Purpose Disclaimer
+            </h2>
+            <p>
+              This website is created and maintained solely for educational
+              purposes. It is designed to demonstrate web development skills,
+              user interface design, and API integration techniques. The site
+              does not host, stream, or provide access to any copyrighted
+              content.
+            </p>
+            <p className="mt-4">
+              All content displayed on this website is for demonstration
+              purposes only and is sourced from publicly available APIs. This
+              project is not intended for commercial use or distribution of
+              copyrighted materials.
+            </p>
+          </section>
+
           <section>
             <h2 className="text-2xl font-semibold mb-4">
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing and using Alien, you agree to be bound by these Terms
-              of Service and all applicable laws and regulations. If you do not
-              agree with any of these terms, you are prohibited from using or
-              accessing this site.
+              By accessing and using this website, you agree to be bound by
+              these Terms of Service and all applicable laws and regulations. If
+              you do not agree with any of these terms, you are prohibited from
+              using or accessing this site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">2. Use License</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              2. Educational Use Only
+            </h2>
             <p>
-              Permission is granted to temporarily access the materials
-              (information or software) on Alien's website for personal,
-              non-commercial transitory viewing only. This is the grant of a
-              license, not a transfer of title, and under this license you may
-              not:
+              This website is provided as an educational demonstration project.
+              All materials and content are for learning and demonstration
+              purposes only. Under this license you may not:
             </p>
             <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Modify or copy the materials</li>
               <li>Use the materials for any commercial purpose</li>
               <li>
                 Attempt to decompile or reverse engineer any software contained
-                on Alien's website
+                on the website
               </li>
               <li>
                 Remove any copyright or other proprietary notations from the
@@ -59,79 +75,48 @@ const TermsPage: React.FC = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">3. Disclaimer</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              3. Content Disclaimer
+            </h2>
             <p>
-              The materials on Alien's website are provided on an 'as is' basis.
-              Alien makes no warranties, expressed or implied, and hereby
-              disclaims and negates all other warranties including, without
-              limitation, implied warranties or conditions of merchantability,
-              fitness for a particular purpose, or non-infringement of
-              intellectual property or other violation of rights.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">4. Limitations</h2>
-            <p>
-              In no event shall Alien or its suppliers be liable for any damages
-              (including, without limitation, damages for loss of data or
-              profit, or due to business interruption) arising out of the use or
-              inability to use the materials on Alien's website.
+              This website does not host, stream, or provide access to any
+              copyrighted content. All media information displayed is sourced
+              from publicly available APIs for demonstration purposes only. We
+              do not condone or support any form of copyright infringement or
+              piracy.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">
-              5. Content Disclaimer
+              4. Third-Party Content
             </h2>
             <p>
-              Alien does not host any media files on its servers. All media
-              content is sourced from third-party providers. We are not
-              responsible for the content, quality, or availability of any media
-              streamed through our platform.
+              Any third-party content or links displayed on this website are for
+              educational purposes only. We do not endorse or claim ownership of
+              any third-party content. Users are responsible for ensuring they
+              comply with all applicable laws and regulations when accessing
+              third-party content.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">
-              6. Revisions and Errata
-            </h2>
+          {/* <section>
+            <h2 className="text-2xl font-semibold mb-4">5. Modifications</h2>
             <p>
-              The materials appearing on Alien's website could include
-              technical, typographical, or photographic errors. Alien does not
-              warrant that any of the materials on its website are accurate,
-              complete, or current. Alien may make changes to the materials
-              contained on its website at any time without notice.
+              We may revise these terms of service at any time without notice.
+              By using this website, you are agreeing to be bound by the then
+              current version of these terms of service.
             </p>
-          </section>
+          </section> */}
 
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">7. Links</h2>
+          {/* <section>
+            <h2 className="text-2xl font-semibold mb-4">6. Contact</h2>
             <p>
-              Alien has not reviewed all of the sites linked to its website and
-              is not responsible for the contents of any such linked site. The
-              inclusion of any link does not imply endorsement by Alien of the
-              site. Use of any such linked website is at the user's own risk.
+              For any questions or concerns regarding these terms or the
+              educational nature of this project, please contact the site
+              administrator.
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">8. Modifications</h2>
-            <p>
-              Alien may revise these terms of service for its website at any
-              time without notice. By using this website, you are agreeing to be
-              bound by the then current version of these terms of service.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">9. Governing Law</h2>
-            <p>
-              These terms and conditions are governed by and construed in
-              accordance with the laws and you irrevocably submit to the
-              exclusive jurisdiction of the courts in that location.
-            </p>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>
