@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Cat } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const AboutPage: React.FC = () => {
@@ -17,6 +17,12 @@ const AboutPage: React.FC = () => {
         <h1 className="text-3xl font-bold mb-8">About Us</h1>
 
         <div className="prose prose-invert max-w-none space-y-8">
+          <section>
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Kenny made this</h2>
+            </div>
+          </section>
+
           <section>
             <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
             <p>
