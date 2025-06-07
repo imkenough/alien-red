@@ -18,7 +18,7 @@ npm run dev
 - Vite
 - Tailwind CSS
 - Prisma
-- NextAuth.js
+- NextAuth.js /planning
 
 ## Project Structure
 
