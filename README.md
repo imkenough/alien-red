@@ -1,6 +1,6 @@
 # Alien
 
-A modern React application built with TypeScript and Vite.
+A modern React-based streaming platform for movies and TV shows, featuring watchlist management and a recently watched section. built with TypeScript and Vite.
 
 ## Quick Start
 
