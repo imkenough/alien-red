@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
 import { api } from "@/lib/api";
 import { Movie } from "@/lib/types";
 import { Loader2 } from "lucide-react";
@@ -80,10 +81,22 @@ const MoviesPage: React.FC = () => {
     }
   };
 
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.origin + '/movies' : '';
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Movies</h1>
+    <>
+      <MetaTags
+        title="Movies - Discover and Watch"
+        description="Browse our extensive collection of movies. Find new releases, popular films, and more."
+        ogTitle="Explore Movies on Alien"
+        ogDescription="Your destination for discovering and watching a wide variety of movies."
+        ogImage="/favicon.svg"
+        canonicalUrl={canonicalUrl}
+        keywords="movies, films, watch movies, movie listings, new releases"
+      />
+      <div className="min-h-screen bg-background">
+        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Movies</h1>
 
         <Tabs
           defaultValue="popular"

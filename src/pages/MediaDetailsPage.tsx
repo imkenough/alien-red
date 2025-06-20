@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
 import { api, getBackdropUrl, getPosterUrl } from "@/lib/api";
 import {
   Movie,
@@ -310,10 +311,46 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     );
   }
 
+  const siteNameSuffix = " | Alien";
+  const pageTitle = media ? (media.title || media.name) + " - Details" + siteNameSuffix : "Media Details" + siteNameSuffix;
+  const pageDescription = media?.overview
+    ? media.overview.substring(0, 155) + (media.overview.length > 155 ? "..." : "")
+    : `View details for ${mediaType === "movie" ? "this movie" : "this TV show"} on Alien. Discover cast, crew, videos, and more.`;
+  const ogImageUrl = media?.poster_path ? getPosterUrl(media.poster_path, "w500") : "/favicon.svg";
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const mediaSpecificKeywords = media
+    ? `${media.title || media.name}, ${mediaType}, details, overview, cast, videos, watch, stream`
+    : "media details, movie info, tv show info, series information";
+  const ogType = mediaType === "movie" ? "video.movie" : "video.tv_show";
+
   return (
-    <div className="pb-12">
-      {/* Video Player (when watching) */}
-      {isWatching && (
+    <>
+      {(!isLoading && media) && (
+        <MetaTags
+          title={pageTitle}
+          description={pageDescription}
+          ogTitle={(media.title || media.name) + siteNameSuffix}
+          ogDescription={pageDescription}
+          ogImage={ogImageUrl || "/favicon.svg"}
+          ogType={ogType}
+          twitterCard="summary_large_image"
+          twitterTitle={(media.title || media.name) + siteNameSuffix}
+          twitterDescription={pageDescription}
+          twitterImage={ogImageUrl || "/favicon.svg"}
+          canonicalUrl={canonicalUrl}
+          keywords={mediaSpecificKeywords}
+        />
+      )}
+      {isLoading && !media && (
+         <MetaTags title={`Loading Details...${siteNameSuffix}`} description="Loading media details, please wait." />
+      )}
+      {!isLoading && !media && (
+         <MetaTags title={`Media Not Found${siteNameSuffix}`} description="The requested media could not be found." />
+      )}
+
+      <div className="pb-12">
+        {/* Video Player (when watching) */}
+        {isWatching && (
         <div className="container px-4 sm:px-6 md:px-8 pt-20 mb-8">
           <VideoPlayer
             src={getStreamingUrl()}

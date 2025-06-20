@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
 import { api } from "@/lib/api";
 import { TVShow } from "@/lib/types";
 import { Loader2 } from "lucide-react";
@@ -80,12 +81,24 @@ const TVShowsPage: React.FC = () => {
     }
   };
 
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.origin + '/tv' : '';
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
-          TV Shows
-        </h1>
+    <>
+      <MetaTags
+        title="TV Shows - Binge-Worthy Series"
+        description="Find your next favorite TV show. Explore popular series, new episodes, and binge-watch classics."
+        ogTitle="Discover TV Shows on Alien"
+        ogDescription="Browse and watch a vast library of TV shows and series."
+        ogImage="/favicon.svg"
+        canonicalUrl={canonicalUrl}
+        keywords="tv shows, series, watch tv, tv programs, binge watch"
+      />
+      <div className="min-h-screen bg-background">
+        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+            TV Shows
+          </h1>
 
         <Tabs
           defaultValue="popular"

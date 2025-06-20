@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
 import { api } from "@/lib/api";
 import { MediaType, Movie, TVShow, Person } from "@/lib/types";
 import { Input } from "@/components/ui/input";
@@ -69,10 +70,30 @@ const SearchPage: React.FC = () => {
     }
   };
 
+  const siteNameSuffix = " | Alien";
+  const pageTitle = searchQuery
+    ? `Search results for "${searchQuery}"${siteNameSuffix}`
+    : `Search${siteNameSuffix}`;
+  const pageDescription = searchQuery
+    ? `Find movies, TV shows, and people matching "${searchQuery}".`
+    : "Search for movies, TV shows, and people on Alien.";
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const keywords = `search, find, ${searchQuery}, movies, tv shows, people`;
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Search</h1>
+    <>
+      <MetaTags
+        title={pageTitle}
+        description={pageDescription}
+        ogTitle={pageTitle}
+        ogDescription={pageDescription}
+        ogImage="/favicon.svg"
+        canonicalUrl={canonicalUrl}
+        keywords={keywords}
+      />
+      <div className="min-h-screen bg-background">
+        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Search</h1>
 
         <form onSubmit={handleSearch} className="mb-6 sm:mb-8">
           <div className="flex w-full max-w-2xl items-center space-x-2">
@@ -282,8 +303,9 @@ const SearchPage: React.FC = () => {
             <p className="text-muted-foreground">No results found</p>
           </div>
         ) : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

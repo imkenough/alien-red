@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { api } from "@/lib/api";
 import { Movie, TVShow } from "@/lib/types";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -322,12 +324,41 @@ const HomePage: React.FC = () => {
     );
   }
 
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.origin : '';
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Alien",
+    "url": canonicalUrl || "https://example.com/", // Use canonicalUrl or fallback
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${canonicalUrl || "https://example.com"}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {isLoading ? (
-        <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-          <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
-          <div className="space-y-4">
+    <>
+      <MetaTags
+        title="Home - Watch Movies & TV Shows Online"
+        description="Discover and stream a vast collection of movies and TV shows. Your ultimate entertainment hub."
+        ogTitle="Alien - Your Ultimate Movie & TV Show Hub"
+        ogDescription="Explore trending movies, popular TV series, and manage your watchlist all in one place on Alien."
+        ogImage="/favicon.svg" // Using placeholder as specified
+        canonicalUrl={canonicalUrl}
+        keywords="movies, tv shows, streaming, online, watch, film, series, entertainment"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(webSiteSchema)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        {isLoading ? (
+          <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
+            <div className="space-y-4">
             <Skeleton className="h-8 w-48 mx-auto" />
             <Skeleton className="h-[200px] w-full rounded-lg" />
           </div>

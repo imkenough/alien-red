@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MetaTags from "../components/MetaTags"; // Import MetaTags
 import { api } from "@/lib/api";
 import { Genre, Movie, TVShow } from "@/lib/types";
 import { Loader2 } from "lucide-react";
@@ -175,10 +176,22 @@ const GenresPage: React.FC = () => {
     );
   }
 
+  const canonicalUrl = typeof window !== 'undefined' ? window.location.origin + '/genres' : '';
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Genres</h1>
+    <>
+      <MetaTags
+        title="Genres - Explore Movies and TV Shows by Genre"
+        description="Discover movies and TV shows organized by genre. Find action, comedy, drama, and more."
+        ogTitle="Browse by Genre on Alien"
+        ogDescription="Explore a wide variety of movies and TV shows categorized by genre."
+        ogImage="/favicon.svg"
+        canonicalUrl={canonicalUrl}
+        keywords="genres, movie genres, tv show genres, action, comedy, drama, thriller"
+      />
+      <div className="min-h-screen bg-background">
+        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Genres</h1>
 
         <Tabs
           defaultValue="movie"
