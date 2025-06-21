@@ -23,6 +23,7 @@ import { Heart, Play, Plus, Star, Server } from "lucide-react";
 import VideoPlayer from "@/components/VideoPlayer";
 import { cn } from "@/lib/utils";
 import { useWatchlist } from "@/contexts/WatchlistContext";
+import { Helmet } from "react-helmet-async"; // Import Helmet
 
 interface MediaDetailsPageProps {}
 
@@ -310,8 +311,89 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     );
   }
 
+  const generateJsonLd = () => {
+    if (!media) return null;
+
+    const siteUrl = "https://alien-streaming.web.app"; // Replace with your actual site URL
+    const mediaUrl = `${siteUrl}/${mediaType}/${id}`;
+    const title = getMediaTitle();
+    const imageUrl = media.poster_path ? getPosterUrl(media.poster_path, "w500") : `${siteUrl}/og-image.png`; // Fallback image
+
+    const commonData = {
+      "@context": "https://schema.org",
+      "name": title,
+      "url": mediaUrl,
+      "image": imageUrl,
+      "description": media.overview,
+      "datePublished": "release_date" in media ? media.release_date : media.first_air_date,
+      "genre": media.genres?.map(g => g.name),
+      "aggregateRating": media.vote_average > 0 ? {
+        "@type": "AggregateRating",
+        "ratingValue": media.vote_average.toFixed(1),
+        "bestRating": "10",
+        "ratingCount": media.vote_count
+      } : undefined,
+      // Potential provider if you have direct streaming links or info
+      // "provider": {
+      //   "@type": "Organization",
+      //   "name": "Alien Streaming"
+      // }
+    };
+
+    if (mediaType === "movie") {
+      return {
+        ...commonData,
+        "@type": "Movie",
+        "duration": "runtime" in media && media.runtime ? `PT${media.runtime}M` : undefined,
+        // "director": // You might need to fetch director from credits
+      };
+    } else if (mediaType === "tv") {
+      const tvShow = media as TVShow;
+      return {
+        ...commonData,
+        "@type": "TVSeries",
+        "numberOfSeasons": tvShow.number_of_seasons,
+        // "creator": tvShow.created_by?.map(c => ({ "@type": "Person", "name": c.name })), // If available
+        // Example for episodes if you want to list some
+        // "containsSeason": selectedSeason ? {
+        //   "@type": "TVSeason",
+        //   "seasonNumber": selectedSeason.season_number,
+        //   "name": selectedSeason.name,
+        //   "numberOfEpisodes": episodes.length,
+        //   "episode": episodes.slice(0, 5).map(ep => ({ // Example: first 5 episodes
+        //     "@type": "TVEpisode",
+        //     "episodeNumber": ep.episode_number,
+        //     "name": ep.name,
+        //     "description": ep.overview,
+        //     "image": ep.still_path ? getPosterUrl(ep.still_path) : imageUrl,
+        //     "datePublished": ep.air_date,
+        //     "partOfSeason": {
+        //       "@type": "TVSeason",
+        //       "seasonNumber": selectedSeason.season_number
+        //     },
+        //     "partOfTVSeries": {
+        //       "@type": "TVSeries",
+        //       "name": title
+        //     }
+        //   }))
+        // } : undefined
+      };
+    }
+    return null;
+  };
+
+  const jsonLdData = generateJsonLd();
+
+
   return (
     <div className="pb-12">
+      <Helmet>
+        {jsonLdData && (
+          <script type="application/ld+json">
+            {JSON.stringify(jsonLdData)}
+          </script>
+        )}
+      </Helmet>
       {/* Video Player (when watching) */}
       {isWatching && (
         <div className="container px-4 sm:px-6 md:px-8 pt-20 mb-8">

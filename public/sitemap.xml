@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+        <url>
+          <loc>https://alien-streaming.web.app/</loc>
+
+          <changefreq>daily</changefreq>
+          <priority>1.0</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movies</loc>
+
+          <changefreq>daily</changefreq>
+          <priority>0.9</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv</loc>
+
+          <changefreq>daily</changefreq>
+          <priority>0.9</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/watchlist</loc>
+
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/genres</loc>
+
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/terms</loc>
+
+          <changefreq>yearly</changefreq>
+          <priority>0.3</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/privacy</loc>
+
+          <changefreq>yearly</changefreq>
+          <priority>0.3</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/about</loc>
+
+          <changefreq>monthly</changefreq>
+          <priority>0.5</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/contact</loc>
+
+          <changefreq>monthly</changefreq>
+          <priority>0.5</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/574475</loc>
+          <lastmod>2025-05-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/552524</loc>
+          <lastmod>2025-05-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1426776</loc>
+          <lastmod>2025-06-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1087891</loc>
+          <lastmod>2025-04-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1087192</loc>
+          <lastmod>2025-06-06</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1181039</loc>
+          <lastmod>2023-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1442776</loc>
+          <lastmod>2024-03-27</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1376434</loc>
+          <lastmod>2025-06-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1240475</loc>
+          <lastmod>2024-02-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1239193</loc>
+          <lastmod>2025-06-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/870028</loc>
+          <lastmod>2025-04-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1127110</loc>
+          <lastmod>2025-06-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1379587</loc>
+          <lastmod>2024-12-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1289601</loc>
+          <lastmod>2024-06-07</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1233413</loc>
+          <lastmod>2025-04-16</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1100988</loc>
+          <lastmod>2025-06-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/950387</loc>
+          <lastmod>2025-03-31</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1017163</loc>
+          <lastmod>2024-04-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1450599</loc>
+          <lastmod>2025-06-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/666154</loc>
+          <lastmod>2025-01-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1315988</loc>
+          <lastmod>2025-01-31</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1152619</loc>
+          <lastmod>2024-04-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/575265</loc>
+          <lastmod>2025-05-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/541671</loc>
+          <lastmod>2025-06-04</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1180648</loc>
+          <lastmod>2024-10-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1284120</loc>
+          <lastmod>2025-03-07</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1197306</loc>
+          <lastmod>2025-03-26</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1225916</loc>
+          <lastmod>2023-12-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/447273</loc>
+          <lastmod>2025-03-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/170</loc>
+          <lastmod>2002-10-31</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1097311</loc>
+          <lastmod>2025-06-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/803796</loc>
+          <lastmod>2025-06-20</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1403735</loc>
+          <lastmod>2025-02-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1449951</loc>
+          <lastmod>2025-03-07</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1241982</loc>
+          <lastmod>2024-11-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/757725</loc>
+          <lastmod>2025-05-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/10191</loc>
+          <lastmod>2010-03-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1396122</loc>
+          <lastmod>2025-06-07</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/986056</loc>
+          <lastmod>2025-04-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1241436</loc>
+          <lastmod>2025-04-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/82702</loc>
+          <lastmod>2014-06-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/822119</loc>
+          <lastmod>2025-02-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1199974</loc>
+          <lastmod>2024-10-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1232933</loc>
+          <lastmod>2025-05-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1232546</loc>
+          <lastmod>2025-04-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1011477</loc>
+          <lastmod>2025-05-08</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1421982</loc>
+          <lastmod>2025-01-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1411773</loc>
+          <lastmod>2024-10-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/324544</loc>
+          <lastmod>2025-02-27</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1010581</loc>
+          <lastmod>2023-06-08</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1180648</loc>
+          <lastmod>2024-10-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/7451</loc>
+          <lastmod>2002-08-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/939243</loc>
+          <lastmod>2024-12-19</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/715287</loc>
+          <lastmod>2020-05-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1395724</loc>
+          <lastmod>2024-11-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/947891</loc>
+          <lastmod>2024-09-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/166428</loc>
+          <lastmod>2019-01-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/11544</loc>
+          <lastmod>2002-06-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1257960</loc>
+          <lastmod>2025-03-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/968171</loc>
+          <lastmod>1973-11-20</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1426680</loc>
+          <lastmod>2025-06-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/589018</loc>
+          <lastmod>2024-10-16</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1225915</loc>
+          <lastmod>2025-04-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1234821</loc>
+          <lastmod>2025-07-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/762509</loc>
+          <lastmod>2024-12-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/911430</loc>
+          <lastmod>2025-06-25</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1040159</loc>
+          <lastmod>2022-10-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/977294</loc>
+          <lastmod>2025-05-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1241894</loc>
+          <lastmod>2024-10-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1136867</loc>
+          <lastmod>2025-06-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1219555</loc>
+          <lastmod>2025-02-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1303162</loc>
+          <lastmod>2024-12-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1233069</loc>
+          <lastmod>2025-04-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/568770</loc>
+          <lastmod>2025-06-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1184918</loc>
+          <lastmod>2024-09-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/975615</loc>
+          <lastmod>2025-05-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/950396</loc>
+          <lastmod>2025-02-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1124620</loc>
+          <lastmod>2025-02-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1094473</loc>
+          <lastmod>2024-10-16</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/896536</loc>
+          <lastmod>2025-04-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/967160</loc>
+          <lastmod>1985-12-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/897160</loc>
+          <lastmod>2023-10-25</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1022789</loc>
+          <lastmod>2024-06-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/259872</loc>
+          <lastmod>2009-10-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1160956</loc>
+          <lastmod>2024-10-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1156593</loc>
+          <lastmod>2024-12-26</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/912649</loc>
+          <lastmod>2024-10-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1562</loc>
+          <lastmod>2007-04-26</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/533535</loc>
+          <lastmod>2024-07-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/56379</loc>
+          <lastmod>1977-10-27</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1297028</loc>
+          <lastmod>2025-05-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1092506</loc>
+          <lastmod>2025-04-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1266860</loc>
+          <lastmod>2024-10-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/668489</loc>
+          <lastmod>2025-04-25</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1061474</loc>
+          <lastmod>2025-07-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1011985</loc>
+          <lastmod>2024-03-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1001414</loc>
+          <lastmod>2025-05-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/611251</loc>
+          <lastmod>1977-02-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/1426306</loc>
+          <lastmod>2025-06-06</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/movie/933260</loc>
+          <lastmod>2024-09-07</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/498</loc>
+          <lastmod>1993-08-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/22980</loc>
+          <lastmod>2009-07-16</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1416</loc>
+          <lastmod>2005-03-27</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2224</loc>
+          <lastmod>1996-07-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/63770</loc>
+          <lastmod>2015-09-08</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/70558</loc>
+          <lastmod>2008-04-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/14981</loc>
+          <lastmod>2005-01-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/50821</loc>
+          <lastmod>1998-10-26</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/65701</loc>
+          <lastmod>2012-01-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/30957</loc>
+          <lastmod>2001-09-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/224</loc>
+          <lastmod>1964-08-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/61818</loc>
+          <lastmod>2014-02-25</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4057</loc>
+          <lastmod>2005-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/59941</loc>
+          <lastmod>2014-02-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/82873</loc>
+          <lastmod>2019-09-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/62223</loc>
+          <lastmod>2015-03-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/17610</loc>
+          <lastmod>2009-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/72879</loc>
+          <lastmod>2017-07-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/68921</loc>
+          <lastmod>2016-11-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/45140</loc>
+          <lastmod>2013-04-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/224</loc>
+          <lastmod>1964-08-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/41149</loc>
+          <lastmod>2002-01-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/68073</loc>
+          <lastmod>2016-05-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/46825</loc>
+          <lastmod>2011-09-28</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/8621</loc>
+          <lastmod>2009-03-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2691</loc>
+          <lastmod>2003-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4606</loc>
+          <lastmod>1988-09-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4057</loc>
+          <lastmod>2005-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/68921</loc>
+          <lastmod>2016-11-29</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/10536</loc>
+          <lastmod>1961-12-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/5368</loc>
+          <lastmod>1954-09-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1966</loc>
+          <lastmod>1964-02-04</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/45140</loc>
+          <lastmod>2013-04-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/153485</loc>
+          <lastmod>1969-10-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2912</loc>
+          <lastmod>1984-09-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/132791</loc>
+          <lastmod>1983-04-04</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1399</loc>
+          <lastmod>2011-04-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/14750</loc>
+          <lastmod>2003-01-27</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2394</loc>
+          <lastmod>1979-01-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/3670</loc>
+          <lastmod>1989-03-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2912</loc>
+          <lastmod>1984-09-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/153485</loc>
+          <lastmod>1969-10-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/3508</loc>
+          <lastmod>2003-09-08</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1622</loc>
+          <lastmod>2005-09-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/3670</loc>
+          <lastmod>1989-03-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/50895</loc>
+          <lastmod>2005-09-06</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/10534</loc>
+          <lastmod>1951-09-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/60554</loc>
+          <lastmod>2014-10-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1400</loc>
+          <lastmod>1989-07-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/21926</loc>
+          <lastmod>2000-03-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/580</loc>
+          <lastmod>1993-01-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1948</loc>
+          <lastmod>2001-10-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/132791</loc>
+          <lastmod>1983-04-04</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/291</loc>
+          <lastmod>1960-12-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/2394</loc>
+          <lastmod>1979-01-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/41149</loc>
+          <lastmod>2002-01-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4551</loc>
+          <lastmod>2006-06-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/79744</loc>
+          <lastmod>2018-10-16</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/43689</loc>
+          <lastmod>2012-07-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/112470</loc>
+          <lastmod>2020-11-02</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/651</loc>
+          <lastmod>1968-09-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/21926</loc>
+          <lastmod>2000-03-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/549</loc>
+          <lastmod>1990-09-13</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4068</loc>
+          <lastmod>1965-09-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/108178</loc>
+          <lastmod>2020-09-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/30667</loc>
+          <lastmod>1950-10-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/269</loc>
+          <lastmod>2003-09-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/314</loc>
+          <lastmod>2001-09-26</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/207655</loc>
+          <lastmod>2012-05-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/46195</loc>
+          <lastmod>2009-07-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/63181</loc>
+          <lastmod>2015-09-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/256059</loc>
+          <lastmod>1994-10-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/15260</loc>
+          <lastmod>2010-04-05</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/106</loc>
+          <lastmod>1960-10-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/10029</loc>
+          <lastmod>1971-01-28</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/50895</loc>
+          <lastmod>2005-09-06</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/11890</loc>
+          <lastmod>1990-10-01</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/65733</loc>
+          <lastmod>2005-04-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/79593</loc>
+          <lastmod>2018-09-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/990</loc>
+          <lastmod>2001-04-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/17887</loc>
+          <lastmod>2000-04-04</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/14944</loc>
+          <lastmod>1950-01-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/36062</loc>
+          <lastmod>2007-09-03</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4614</loc>
+          <lastmod>2003-09-23</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/67175</loc>
+          <lastmod>2016-07-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/64190</loc>
+          <lastmod>1999-08-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/456</loc>
+          <lastmod>1989-12-17</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/11694</loc>
+          <lastmod>1980-07-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/11366</loc>
+          <lastmod>2000-07-18</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1398</loc>
+          <lastmod>1999-01-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1434</loc>
+          <lastmod>1999-01-31</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/57532</loc>
+          <lastmod>2013-08-12</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/14743</loc>
+          <lastmod>2000-09-11</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/64614</loc>
+          <lastmod>2013-10-28</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1948</loc>
+          <lastmod>2001-10-14</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/1435</loc>
+          <lastmod>2009-09-22</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/15226</loc>
+          <lastmod>1998-01-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/43689</loc>
+          <lastmod>2012-07-09</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4419</loc>
+          <lastmod>2003-02-21</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+        <url>
+          <loc>https://alien-streaming.web.app/tv/4601</loc>
+          <lastmod>2001-09-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+
+    </urlset>

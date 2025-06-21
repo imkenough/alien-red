@@ -1,7 +1,13 @@
 import axios from "axios";
 
 // TMDb API configuration
-const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+let apiKey = undefined;
+if (typeof process !== 'undefined' && process.env && process.env.VITE_TMDB_API_KEY) {
+  apiKey = process.env.VITE_TMDB_API_KEY;
+} else if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_TMDB_API_KEY) {
+  apiKey = import.meta.env.VITE_TMDB_API_KEY;
+}
+const TMDB_API_KEY = apiKey;
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
 
@@ -11,9 +17,25 @@ const VIDSRC_BASE_URL = "https://vidsrc.xyz/embed";
 // Create an axios instance for TMDb API
 const tmdbApi = axios.create({
   baseURL: TMDB_BASE_URL,
-  params: {
-    api_key: TMDB_API_KEY,
-  },
+  // api_key will be added dynamically per request
+});
+
+// Add request interceptor to dynamically add API key
+tmdbApi.interceptors.request.use((config) => {
+  let currentApiKey = undefined;
+  if (typeof process !== 'undefined' && process.env && process.env.VITE_TMDB_API_KEY) {
+    currentApiKey = process.env.VITE_TMDB_API_KEY;
+  } else if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_TMDB_API_KEY) {
+    currentApiKey = import.meta.env.VITE_TMDB_API_KEY;
+  }
+
+  config.params = {
+    ...config.params,
+    api_key: currentApiKey,
+  };
+  return config;
+}, (error) => {
+  return Promise.reject(error);
 });
 
 // Add response interceptor for error handling
