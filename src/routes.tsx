@@ -138,6 +138,7 @@ const AppRoutes: React.FC = () => {
         </div>
       </WatchlistProvider>
     </ThemeProvider>
+    </HelmetProvider>
   );
 };
 
