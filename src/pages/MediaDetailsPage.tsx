@@ -350,15 +350,15 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
           {/* Poster and Actions */}
           <div className="md:col-span-1">
             <div className="sticky top-24">
-              <Card className="overflow-hidden border-0 shadow-lg rounded-lg">
+              <Card className="overflow-hidden border-0 shadow-lg rounded-lg max-w-sm mx-auto md:max-w-none">
                 {media.poster_path ? (
                   <img
                     src={getPosterUrl(media.poster_path, "w500") || undefined}
                     alt={getMediaTitle()}
-                    className="w-full h-auto"
+                    className="w-full h-auto max-h-[400px] md:max-h-[500px] object-cover"
                   />
                 ) : (
-                  <div className="aspect-[2/3] bg-muted flex items-center justify-center">
+                  <div className="aspect-[2/3] bg-muted flex items-center justify-center max-h-[400px] md:max-h-[500px]">
                     <span className="text-muted-foreground">
                       No Poster Available
                     </span>
