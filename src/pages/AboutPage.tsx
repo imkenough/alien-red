@@ -70,8 +70,7 @@ const AboutPage: React.FC = () => {
             <h2 className="text-2xl font-semibold mb-4">Our Commitment</h2>
             <p>We are committed to:</p>
             <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Absolutely nothing.</li>
-              <li>Ur mom lol</li>
+              <li>doing ur mom lol</li>
               {/* <li>Protecting user privacy</li>
               <li>Continuous improvement of our platform</li> */}
             </ul>

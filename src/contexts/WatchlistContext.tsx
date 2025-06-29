@@ -80,13 +80,13 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
         return prev;
       }
       return [
-        ...prev,
         {
           ...item,
           added_at: Date.now(),
           watched: false,
           watch_later: false,
         },
+        ...prev,
       ];
     });
   };
