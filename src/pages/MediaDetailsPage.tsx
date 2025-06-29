@@ -46,6 +46,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   } = useWatchlist();
   const navigate = useNavigate();
   const [selectedServer, setSelectedServer] = useState<string>("vidfast");
+  const [selectedAnimeDub, setSelectedAnimeDub] = useState<boolean>(false);
 
   const inWatchlist = media ? isInWatchlist(media.id) : false;
 
@@ -238,8 +239,37 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
         ? "https://vidfast.pro"
         : selectedServer === "embedsu"
         ? "https://embed.su/embed"
+        : selectedServer === "videasy"
+        ? "https://player.videasy.net"
         : "https://vidfast.pro"; // Default to vidfast
 
+    if (selectedServer === "videasy") {
+      // Videasy logic
+      if (mediaType === "movie") {
+        // Movie: https://player.videasy.net/movie/movie_id
+        return `${baseUrl}/movie/${id}`;
+      } else if (mediaType === "tv") {
+        // TV: https://player.videasy.net/tv/show_id/season/episode
+        return `${baseUrl}/tv/${id}/${selectedSeason?.season_number || 1}/${
+          selectedEpisode?.episode_number || 1
+        }`;
+      } else if (mediaType === "anime") {
+        // Anime: https://player.videasy.net/anime/anilist_id/episode?dub=true|false
+        // or for movies: https://player.videasy.net/anime/anilist_id?dub=true|false
+        if (selectedEpisode) {
+          // Show episode
+          return `${baseUrl}/anime/${id}/${selectedEpisode.episode_number}${
+            selectedAnimeDub ? "?dub=true" : ""
+          }`;
+        } else {
+          // Movie
+          return `${baseUrl}/anime/${id}${selectedAnimeDub ? "?dub=true" : ""}`;
+        }
+      }
+      return "";
+    }
+
+    // Existing logic for other servers
     if (mediaType === "movie") {
       return selectedServer === "vidfast"
         ? `${baseUrl}/movie/${id}`
@@ -348,12 +378,14 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Poster and Actions */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 max-w-xs w-full mx-auto flex justify-center md:block">
             <div className="sticky top-24">
               <Card className="overflow-hidden border-0 shadow-lg rounded-lg">
                 {media.poster_path ? (
                   <img
-                    src={getPosterUrl(media.poster_path, "w500") || undefined}
+                    src={
+                      (getPosterUrl(media.poster_path, "w500") as string) || ""
+                    }
                     alt={getMediaTitle()}
                     className="w-full h-auto"
                   />
@@ -480,6 +512,12 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                         VidSrc
                       </div>
                     </SelectItem>
+                    <SelectItem value="videasy">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-purple-600"></span>
+                        Videasy
+                      </div>
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -524,7 +562,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                           className={cn(
                             "flex-none w-[300px] snap-start cursor-pointer transition-all duration-200",
                             selectedEpisode?.id === episode.id &&
-                              "sm:ring-2 sm:ring-primary"
+                              "bg-primary/30 text-primary"
                           )}
                           onClick={() => setSelectedEpisode(episode)}
                         >
