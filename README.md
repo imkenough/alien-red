@@ -27,7 +27,7 @@ Alien is a modern streaming platform built with React, TypeScript, and Vite. It 
     - Axios (HTTP Client)
 - **Data Sources:**
     - TMDb API (Movie and TV Show metadata)
-    - VidSrc API (Streaming links)
+    - Various streaming APIs (Streaming links)
 - **Linting:**
     - ESLint
 
@@ -44,8 +44,8 @@ Alien is a modern streaming platform built with React, TypeScript, and Vite. It 
 1. **Clone the repository:**
     
     ```bash
-    git clone <repository-url>
-    cd alien-streaming-platform # Or your project directory name
+    git clone https://github.com/imkenough/alien-red
+    cd alien-red 
     
     ```
     
@@ -62,9 +62,7 @@ Create a `.env` file in the root of the project and add your TMDb API key:
     ```
     VITE_TMDB_API_KEY=your_tmdb_api_key_here
     
-    ```
-    
-    *(Note: Based on `src/lib/api.ts`, this is how the API key is accessed.)*
+    ``` 
     
 4. **Run the development server:**
     
@@ -110,8 +108,6 @@ alien-streaming-platform/
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to contribute, please:
-
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).
 3. Make your changes.
@@ -121,10 +117,3 @@ Contributions are welcome! If you'd like to contribute, please:
 
 Please ensure your code adheres to the project's linting standards (`npm run lint`).
 
-## 📄 License
-
-(To be added - if a license file exists or is chosen, specify it here. e.g., MIT License)
-
----
-
-*This README was generated based on an analysis of the project codebase.*
