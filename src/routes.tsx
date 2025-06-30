@@ -17,6 +17,7 @@ import TermsPage from "@/pages/TermsPage";
 import PrivacyPage from "@/pages/PrivacyPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -45,6 +46,7 @@ const AppRoutes: React.FC = () => {
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
           <Footer />
