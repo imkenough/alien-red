@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
             . Alien does not store any media files on its servers.
           </p>
           <p className="text-sm text-muted-foreground">
-            {new Date().getFullYear()} Alien. All rights not reserved lol.
+            {new Date().getFullYear()} Alien. All rights not reserved loll.
           </p>
         </div>
       </div>
