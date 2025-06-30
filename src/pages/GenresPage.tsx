@@ -14,6 +14,7 @@ import {
 import MediaCard from "@/components/MediaCard";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const GenresPage: React.FC = () => {
   const [movieGenres, setMovieGenres] = useState<Genre[]>([]);
@@ -176,145 +177,160 @@ const GenresPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Genres</h1>
+    <>
+      <Helmet>
+        <title>Genres - Alien Streaming</title>
+        <meta name="description" content="Browse movies and TV shows by genre. Find your favorite genres and discover new content on Alien." />
+        <meta property="og:title" content="Genres - Alien Streaming" />
+        <meta property="og:description" content="Browse movies and TV shows by genre. Find your favorite genres and discover new content on Alien." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/genres" />
+        <meta property="og:image" content="/favicon.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Genres - Alien Streaming" />
+        <meta name="twitter:description" content="Browse movies and TV shows by genre. Find your favorite genres and discover new content on Alien." />
+        <meta name="twitter:image" content="/favicon.svg" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Genres</h1>
 
-        <Tabs
-          defaultValue="movie"
-          value={activeTab}
-          onValueChange={handleTabChange}
-        >
-          <TabsList className="mb-4 sm:mb-6">
-            <TabsTrigger value="movie">Movies</TabsTrigger>
-            <TabsTrigger value="tv">TV Shows</TabsTrigger>
-          </TabsList>
+          <Tabs
+            defaultValue="movie"
+            value={activeTab}
+            onValueChange={handleTabChange}
+          >
+            <TabsList className="mb-4 sm:mb-6">
+              <TabsTrigger value="movie">Movies</TabsTrigger>
+              <TabsTrigger value="tv">TV Shows</TabsTrigger>
+            </TabsList>
 
-          <TabsContent value="movie" className="mt-0">
-            <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
-              {movieGenres.map((genre) => (
-                <Button
-                  key={genre.id}
-                  variant={
-                    selectedGenre?.id === genre.id ? "default" : "outline"
-                  }
-                  size="sm"
-                  onClick={() => handleGenreClick(genre, "movie")}
-                >
-                  {genre.name}
-                </Button>
-              ))}
-            </div>
+            <TabsContent value="movie" className="mt-0">
+              <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+                {movieGenres.map((genre) => (
+                  <Button
+                    key={genre.id}
+                    variant={
+                      selectedGenre?.id === genre.id ? "default" : "outline"
+                    }
+                    size="sm"
+                    onClick={() => handleGenreClick(genre, "movie")}
+                  >
+                    {genre.name}
+                  </Button>
+                ))}
+              </div>
 
-            {selectedGenre && (
-              <>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <h2 className="text-xl sm:text-2xl font-semibold">
-                    {selectedGenre.name} Movies
-                  </h2>
-                  <Select value={sortBy} onValueChange={handleSortChange}>
-                    <SelectTrigger className="w-full sm:w-[180px]">
-                      <SelectValue placeholder="Sort by" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {sortOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
-                  {movies.map((movie) => (
-                    <MediaCard
-                      key={`movie-${movie.id}`}
-                      id={movie.id}
-                      title={movie.title}
-                      posterPath={movie.poster_path}
-                      rating={movie.vote_average}
-                      mediaType="movie"
-                      year={movie.release_date?.substring(0, 4)}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-          </TabsContent>
-
-          <TabsContent value="tv" className="mt-0">
-            <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
-              {tvGenres.map((genre) => (
-                <Button
-                  key={genre.id}
-                  variant={
-                    selectedGenre?.id === genre.id ? "default" : "outline"
-                  }
-                  size="sm"
-                  onClick={() => handleGenreClick(genre, "tv")}
-                >
-                  {genre.name}
-                </Button>
-              ))}
-            </div>
-
-            {selectedGenre && (
-              <>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <h2 className="text-xl sm:text-2xl font-semibold">
-                    {selectedGenre.name} TV Shows
-                  </h2>
-                  <Select value={sortBy} onValueChange={handleSortChange}>
-                    <SelectTrigger className="w-full sm:w-[180px]">
-                      <SelectValue placeholder="Sort by" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {sortOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
-                  {tvShows.map((show) => (
-                    <MediaCard
-                      key={`tv-${show.id}`}
-                      id={show.id}
-                      title={show.name}
-                      posterPath={show.poster_path}
-                      rating={show.vote_average}
-                      mediaType="tv"
-                      year={show.first_air_date?.substring(0, 4)}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-          </TabsContent>
-        </Tabs>
-
-        {selectedGenre && page < totalPages && (
-          <div className="mt-6 sm:mt-8 flex justify-center">
-            <Button
-              onClick={handleLoadMore}
-              disabled={isLoading}
-              className="min-w-[150px]"
-            >
-              {isLoading ? (
+              {selectedGenre && (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Loading...
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <h2 className="text-xl sm:text-2xl font-semibold">
+                      {selectedGenre.name} Movies
+                    </h2>
+                    <Select value={sortBy} onValueChange={handleSortChange}>
+                      <SelectTrigger className="w-full sm:w-[180px]">
+                        <SelectValue placeholder="Sort by" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {sortOptions.map((option) => (
+                          <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
+                    {movies.map((movie) => (
+                      <MediaCard
+                        key={`movie-${movie.id}`}
+                        id={movie.id}
+                        title={movie.title}
+                        posterPath={movie.poster_path}
+                        rating={movie.vote_average}
+                        mediaType="movie"
+                        year={movie.release_date?.substring(0, 4)}
+                      />
+                    ))}
+                  </div>
                 </>
-              ) : (
-                "Load More"
               )}
-            </Button>
-          </div>
-        )}
+            </TabsContent>
+
+            <TabsContent value="tv" className="mt-0">
+              <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+                {tvGenres.map((genre) => (
+                  <Button
+                    key={genre.id}
+                    variant={
+                      selectedGenre?.id === genre.id ? "default" : "outline"
+                    }
+                    size="sm"
+                    onClick={() => handleGenreClick(genre, "tv")}
+                  >
+                    {genre.name}
+                  </Button>
+                ))}
+              </div>
+
+              {selectedGenre && (
+                <>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <h2 className="text-xl sm:text-2xl font-semibold">
+                      {selectedGenre.name} TV Shows
+                    </h2>
+                    <Select value={sortBy} onValueChange={handleSortChange}>
+                      <SelectTrigger className="w-full sm:w-[180px]">
+                        <SelectValue placeholder="Sort by" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {sortOptions.map((option) => (
+                          <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
+                    {tvShows.map((show) => (
+                      <MediaCard
+                        key={`tv-${show.id}`}
+                        id={show.id}
+                        title={show.name}
+                        posterPath={show.poster_path}
+                        rating={show.vote_average}
+                        mediaType="tv"
+                        year={show.first_air_date?.substring(0, 4)}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </TabsContent>
+          </Tabs>
+
+          {selectedGenre && page < totalPages && (
+            <div className="mt-6 sm:mt-8 flex justify-center">
+              <Button
+                onClick={handleLoadMore}
+                disabled={isLoading}
+                className="min-w-[150px]"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  "Load More"
+                )}
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

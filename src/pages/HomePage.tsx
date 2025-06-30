@@ -6,6 +6,7 @@ import MediaCarousel from "@/components/MediaCarousel";
 import HeroSection from "@/components/HeroSection";
 import { useWatchlist } from "@/contexts/WatchlistContext";
 import MediaCard from "@/components/MediaCard";
+import { Helmet } from 'react-helmet-async';
 
 const AUTO_SCROLL_INTERVAL = 5000; // 5 seconds
 const TRANSITION_DURATION = 500; // 0.5 seconds
@@ -306,109 +307,139 @@ const HomePage: React.FC = () => {
 
   if (isLoading && !featuredItems.length) {
     return (
-      <div className="min-h-screen bg-background">
-        <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-          <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-48 mx-auto" />
-            <Skeleton className="h-[200px] w-full rounded-lg" />
-          </div>
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-48 mx-auto" />
-            <Skeleton className="h-[200px] w-full rounded-lg" />
+      <>
+        <Helmet>
+          <title>Alien - Watch Movies & TV Shows Online</title>
+          <meta name="description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+          <meta property="og:title" content="Alien - Watch Movies & TV Shows Online" />
+          <meta property="og:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://yourdomain.com/" />
+          <meta property="og:image" content="/favicon.svg" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Alien - Watch Movies & TV Shows Online" />
+          <meta name="twitter:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+          <meta name="twitter:image" content="/favicon.svg" />
+        </Helmet>
+        <div className="min-h-screen bg-background">
+          <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
+            <div className="space-y-4">
+              <Skeleton className="h-8 w-48 mx-auto" />
+              <Skeleton className="h-[200px] w-full rounded-lg" />
+            </div>
+            <div className="space-y-4">
+              <Skeleton className="h-8 w-48 mx-auto" />
+              <Skeleton className="h-[200px] w-full rounded-lg" />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {isLoading ? (
-        <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-          <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-48 mx-auto" />
-            <Skeleton className="h-[200px] w-full rounded-lg" />
+    <>
+      <Helmet>
+        <title>Alien - Watch Movies & TV Shows Online</title>
+        <meta name="description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+        <meta property="og:title" content="Alien - Watch Movies & TV Shows Online" />
+        <meta property="og:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:image" content="/favicon.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Alien - Watch Movies & TV Shows Online" />
+        <meta name="twitter:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+        <meta name="twitter:image" content="/favicon.svg" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        {isLoading ? (
+          <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />
+            <div className="space-y-4">
+              <Skeleton className="h-8 w-48 mx-auto" />
+              <Skeleton className="h-[200px] w-full rounded-lg" />
+            </div>
+            <div className="space-y-4">
+              <Skeleton className="h-8 w-48 mx-auto" />
+              <Skeleton className="h-[200px] w-full rounded-lg" />
+            </div>
           </div>
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-48 mx-auto" />
-            <Skeleton className="h-[200px] w-full rounded-lg" />
-          </div>
-        </div>
-      ) : (
-        <div className="space-y-8 sm:space-y-12 md:space-y-16">
-          {/* Hero Section */}
-          {featuredItems.length > 0 && (
-            <HeroSection
-              item={featuredItems[currentFeaturedIndex]}
-              onPrevious={handlePreviousHero}
-              onNext={handleNextHero}
-              direction={slideDirection}
-              currentIndex={currentFeaturedIndex}
-              totalItems={featuredItems.length}
-            />
-          )}
-
-          {/* Continue Watching Section */}
-          {continueWatchingItems.length > 0 && (
-            <div className="px-4 sm:px-6 md:px-8">
-              <MediaCarousel
-                title="Continue Watching"
-                items={continueWatchingItems}
-                renderItem={(item) => {
-                  const continueWatchingData = continueWatching.find(
-                    (cw) => cw.id === item.id
-                  );
-                  return (
-                    <MediaCard
-                      id={item.id}
-                      title={
-                        "title" in item ? item.title : item.name || "Unknown"
-                      }
-                      posterPath={item.poster_path}
-                      rating={item.vote_average}
-                      mediaType={"title" in item ? "movie" : "tv"}
-                      year={
-                        "release_date" in item
-                          ? item.release_date?.substring(0, 4)
-                          : item.first_air_date?.substring(0, 4)
-                      }
-                      continueWatchingData={continueWatchingData}
-                      onRemoveContinueWatching={() =>
-                        removeFromContinueWatching(item.id)
-                      }
-                    />
-                  );
-                }}
+        ) : (
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
+            {/* Hero Section */}
+            {featuredItems.length > 0 && (
+              <HeroSection
+                item={featuredItems[currentFeaturedIndex]}
+                onPrevious={handlePreviousHero}
+                onNext={handleNextHero}
+                direction={slideDirection}
+                currentIndex={currentFeaturedIndex}
+                totalItems={featuredItems.length}
               />
-            </div>
-          )}
+            )}
 
-          {/* Watchlist Section */}
-          {watchlist.length > 0 && (
+            {/* Continue Watching Section */}
+            {continueWatchingItems.length > 0 && (
+              <div className="px-4 sm:px-6 md:px-8">
+                <MediaCarousel
+                  title="Continue Watching"
+                  items={continueWatchingItems}
+                  renderItem={(item) => {
+                    const continueWatchingData = continueWatching.find(
+                      (cw) => cw.id === item.id
+                    );
+                    return (
+                      <MediaCard
+                        id={item.id}
+                        title={
+                          "title" in item ? item.title : item.name || "Unknown"
+                        }
+                        posterPath={item.poster_path}
+                        rating={item.vote_average}
+                        mediaType={"title" in item ? "movie" : "tv"}
+                        year={
+                          "release_date" in item
+                            ? item.release_date?.substring(0, 4)
+                            : item.first_air_date?.substring(0, 4)
+                        }
+                        continueWatchingData={continueWatchingData}
+                        onRemoveContinueWatching={() =>
+                          removeFromContinueWatching(item.id)
+                        }
+                      />
+                    );
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Watchlist Section */}
+            {watchlist.length > 0 && (
+              <div className="px-4 sm:px-6 md:px-8">
+                <MediaCarousel title="My Watchlist" items={watchlistItems} />
+              </div>
+            )}
+
+            {/* Trending Section */}
             <div className="px-4 sm:px-6 md:px-8">
-              <MediaCarousel title="My Watchlist" items={watchlistItems} />
+              <MediaCarousel title="Trending Now" items={trendingAll} />
             </div>
-          )}
 
-          {/* Trending Section */}
-          <div className="px-4 sm:px-6 md:px-8">
-            <MediaCarousel title="Trending Now" items={trendingAll} />
-          </div>
+            {/* Popular Movies Section */}
+            <div className="px-4 sm:px-6 md:px-8">
+              <MediaCarousel title="Popular Movies" items={popularMovies} />
+            </div>
 
-          {/* Popular Movies Section */}
-          <div className="px-4 sm:px-6 md:px-8">
-            <MediaCarousel title="Popular Movies" items={popularMovies} />
+            {/* Popular TV Shows Section */}
+            <div className="px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-16">
+              <MediaCarousel title="Popular TV Shows" items={popularTVShows} />
+            </div>
           </div>
-
-          {/* Popular TV Shows Section */}
-          <div className="px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-16">
-            <MediaCarousel title="Popular TV Shows" items={popularTVShows} />
-          </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
