@@ -44,11 +44,11 @@ const Header: React.FC = () => {
       icon: <List className="h-4 w-4 mr-2" />,
       isActive: isGenresPage,
     },
-    {
-      label: "Search",
-      path: "/search",
-      icon: <Search className="h-4 w-4 mr-2" />,
-    },
+    // {
+    //   label: "Search",
+    //   path: "/search",
+    //   icon: <Search className="h-4 w-4 mr-2" />,
+    // },
   ];
 
   return (
