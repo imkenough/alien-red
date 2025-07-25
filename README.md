@@ -10,7 +10,6 @@ Alien is a modern streaming platform built with React, TypeScript, and Vite. It 
 - **Genre-based Discovery:** Explore content categorized by genres.
 - **Streaming:** Watch movies and TV episodes directly within the platform.
 - **Watchlist:** Keep track of content you want to watch. (Implied by `WatchlistContext.tsx`)
-- **User Accounts:** Support for user authentication. (Implied by NextAuth/Prisma dependencies)
 - **Responsive Design:** User interface built with Tailwind CSS and Radix UI components.
 
 ## 🛠️ Tech Stack
@@ -106,7 +105,7 @@ alien-streaming-platform/
 
 ```
 
-## 🤝 Contributing
+## 🤝 Contributing    
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).
@@ -116,4 +115,13 @@ alien-streaming-platform/
 6. Open a Pull Request.
 
 Please ensure your code adheres to the project's linting standards (`npm run lint`).
+
+## 💖 Support
+Star this Repository :)
+
+![174794647-0c851917-e5c9-4fb9-bf88-b61d89dc2f4f](https://github.com/user-attachments/assets/df4795f1-3181-43c7-af7f-68eb9b814d1c)
+
+
+
+
 
