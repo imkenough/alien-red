@@ -6,7 +6,7 @@ import MediaCarousel from "@/components/MediaCarousel";
 import HeroSection from "@/components/HeroSection";
 import { useWatchlist } from "@/contexts/WatchlistContext";
 import MediaCard from "@/components/MediaCard";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 const AUTO_SCROLL_INTERVAL = 5000; // 5 seconds
 const TRANSITION_DURATION = 500; // 0.5 seconds
@@ -310,15 +310,30 @@ const HomePage: React.FC = () => {
       <>
         <Helmet>
           <title>Alien - Watch Movies & TV Shows Online</title>
-          <meta name="description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
-          <meta property="og:title" content="Alien - Watch Movies & TV Shows Online" />
-          <meta property="og:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+          <meta
+            name="description"
+            content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+          />
+          <meta
+            property="og:title"
+            content="Alien - Watch Movies & TV Shows Online"
+          />
+          <meta
+            property="og:description"
+            content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+          />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://yourdomain.com/" />
           <meta property="og:image" content="/favicon.svg" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Alien - Watch Movies & TV Shows Online" />
-          <meta name="twitter:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+          <meta
+            name="twitter:title"
+            content="Alien - Watch Movies & TV Shows Online"
+          />
+          <meta
+            name="twitter:description"
+            content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+          />
           <meta name="twitter:image" content="/favicon.svg" />
         </Helmet>
         <div className="min-h-screen bg-background">
@@ -342,15 +357,30 @@ const HomePage: React.FC = () => {
     <>
       <Helmet>
         <title>Alien - Watch Movies & TV Shows Online</title>
-        <meta name="description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
-        <meta property="og:title" content="Alien - Watch Movies & TV Shows Online" />
-        <meta property="og:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+        <meta
+          name="description"
+          content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+        />
+        <meta
+          property="og:title"
+          content="Alien - Watch Movies & TV Shows Online"
+        />
+        <meta
+          property="og:description"
+          content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Alien - Watch Movies & TV Shows Online" />
-        <meta name="twitter:description" content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place." />
+        <meta
+          name="twitter:title"
+          content="Alien - Watch Movies & TV Shows Online"
+        />
+        <meta
+          name="twitter:description"
+          content="Stream trending movies and TV shows from multiple sources. Discover, watch, and manage your watchlist all in one place."
+        />
         <meta name="twitter:image" content="/favicon.svg" />
       </Helmet>
       <div className="min-h-screen bg-background">

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  useLocation,
+  useSearchParams,
+} from "react-router-dom";
 import { api, getBackdropUrl, getPosterUrl } from "@/lib/api";
 import {
   Movie,
@@ -29,6 +34,7 @@ interface MediaDetailsPageProps {}
 const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const { mediaType, id } = useParams<{ mediaType: string; id: string }>();
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const continueWatchingData = location.state?.continueWatchingData as
     | ContinueWatchingItem
     | undefined;
@@ -68,8 +74,19 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
           if (tvData.seasons && tvData.seasons.length > 0) {
             let targetSeason: Season | undefined;
 
+            // First check URL parameters for season
+            const urlSeason = searchParams.get("season");
+            const urlEpisode = searchParams.get("episode");
+
+            // If we have URL parameters, use those
+            if (urlSeason) {
+              targetSeason = tvData.seasons.find(
+                (s: Season) => s.season_number === parseInt(urlSeason)
+              );
+            }
+
             // If we have continue watching data, use that season
-            if (continueWatchingData?.season) {
+            if (!targetSeason && continueWatchingData?.season) {
               targetSeason = tvData.seasons.find(
                 (s: Season) => s.season_number === continueWatchingData.season
               );
@@ -96,8 +113,19 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
               if (seasonData.episodes && seasonData.episodes.length > 0) {
                 let targetEpisode: Episode | undefined;
 
+                // If we have URL parameters, use those
+                if (
+                  urlEpisode &&
+                  urlSeason === targetSeason.season_number.toString()
+                ) {
+                  targetEpisode = seasonData.episodes.find(
+                    (e: { episode_number: number }) =>
+                      e.episode_number === parseInt(urlEpisode)
+                  );
+                }
+
                 // If we have continue watching data, use that episode
-                if (continueWatchingData?.episode) {
+                if (!targetEpisode && continueWatchingData?.episode) {
                   targetEpisode = seasonData.episodes.find(
                     (e: { episode_number: number }) =>
                       e.episode_number === continueWatchingData.episode
@@ -134,6 +162,25 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
             selectedSeason.season_number
           );
           setEpisodes(seasonData.episodes || []);
+
+          // First check URL parameters for episode
+          const urlEpisode = searchParams.get("episode");
+          const urlSeason = searchParams.get("season");
+
+          // If we have URL parameters and they match the current season, use the episode from URL
+          if (
+            urlEpisode &&
+            urlSeason === selectedSeason.season_number.toString()
+          ) {
+            const targetEpisode = seasonData.episodes?.find(
+              (e: { episode_number: number }) =>
+                e.episode_number === parseInt(urlEpisode)
+            );
+            if (targetEpisode) {
+              setSelectedEpisode(targetEpisode);
+              return;
+            }
+          }
 
           // If this is the continue watching season, try to find the target episode
           if (
@@ -174,6 +221,8 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     );
     if (season) {
       setSelectedSeason(season);
+      // Update URL parameters
+      setSearchParams({ season: seasonNumber });
     }
   };
 
@@ -183,6 +232,9 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     );
     if (episode) {
       setSelectedEpisode(episode);
+      // Update URL parameters
+      const currentSeason = selectedSeason?.season_number.toString() || "1";
+      setSearchParams({ season: currentSeason, episode: episodeNumber });
     }
   };
 
@@ -564,7 +616,16 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                             selectedEpisode?.id === episode.id &&
                               "bg-primary/30 text-primary"
                           )}
-                          onClick={() => setSelectedEpisode(episode)}
+                          onClick={() => {
+                            setSelectedEpisode(episode);
+                            // Update URL parameters
+                            const currentSeason =
+                              selectedSeason?.season_number.toString() || "1";
+                            setSearchParams({
+                              season: currentSeason,
+                              episode: episode.episode_number.toString(),
+                            });
+                          }}
                         >
                           <div className="relative aspect-video rounded-lg overflow-hidden">
                             {episode.still_path ? (

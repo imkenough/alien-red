@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Cat } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 const AboutPage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,15 +11,24 @@ const AboutPage: React.FC = () => {
     <>
       <Helmet>
         <title>About Alien - Streaming Platform</title>
-        <meta name="description" content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience." />
+        <meta
+          name="description"
+          content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience."
+        />
         <meta property="og:title" content="About Alien - Streaming Platform" />
-        <meta property="og:description" content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience." />
+        <meta
+          property="og:description"
+          content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/about" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Alien - Streaming Platform" />
-        <meta name="twitter:description" content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience." />
+        <meta
+          name="twitter:description"
+          content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience."
+        />
         <meta name="twitter:image" content="/favicon.svg" />
       </Helmet>
       <div className="container px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
@@ -69,9 +78,10 @@ const AboutPage: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Data Source</h2>
               <p>
-                I sourced the following media data from TMDb (The Movie Database),
-                ensuring accurate and up-to-date information about movies and TV
-                shows. It's free. Please don't cut my API access TMDB.
+                I sourced the following media data from TMDb (The Movie
+                Database), ensuring accurate and up-to-date information about
+                movies and TV shows. It's free. Please don't cut my API access
+                TMDB.
               </p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>Cast and crew information</li>
