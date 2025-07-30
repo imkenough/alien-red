@@ -13,11 +13,15 @@ import SearchPage from "@/pages/SearchPage";
 import MediaDetailsPage from "@/pages/MediaDetailsPage";
 import WatchlistPage from "@/pages/WatchlistPage";
 import GenresPage from "@/pages/GenresPage";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import TermsPage from "@/pages/TermsPage";
 import PrivacyPage from "@/pages/PrivacyPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFoundPage from "@/pages/NotFoundPage";
+import LoginPage from "@/pages/LoginPage";
+import RegisterPage from "@/pages/RegisterPage";
+
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -38,7 +42,8 @@ const AppRoutes: React.FC = () => {
               <Route path="/movies" element={<MoviesPage />} />
               <Route path="/tv" element={<TVShowsPage />} />
               <Route path="/search" element={<SearchPage />} />
-              <Route path="/watchlist" element={<WatchlistPage />} />
+              <Route path="/watchlist" element={<ProtectedRoute><WatchlistPage /></ProtectedRoute>} />
+              
               <Route path="/genres" element={<GenresPage />} />
               <Route path="/genres/:genreId" element={<GenresPage />} />
               <Route path="/:mediaType/:id" element={<MediaDetailsPage />} />
@@ -46,6 +51,8 @@ const AppRoutes: React.FC = () => {
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

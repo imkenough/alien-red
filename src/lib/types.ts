@@ -1,4 +1,4 @@
-// Media Types
+j; // Media Types
 export type MediaType = "movie" | "tv" | "person";
 
 // Base Interface for Movie and TV Show
@@ -135,7 +135,8 @@ export interface TrendingResult {
 
 // Watchlist Item
 export interface WatchlistItem {
-  id: number;
+  id: number; // TMDB media ID
+  supabase_id?: string; // Supabase row ID
   title: string;
   poster_path: string | undefined;
   media_type: "movie" | "tv";

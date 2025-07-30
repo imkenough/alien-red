@@ -266,6 +266,9 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const handleWatchlistToggle = () => {
     if (!media) return;
 
+    console.log("handleWatchlistToggle called for media ID:", media.id);
+    console.log("Current inWatchlist status:", inWatchlist);
+
     const title = "title" in media ? media.title : media.name;
 
     if (inWatchlist) {

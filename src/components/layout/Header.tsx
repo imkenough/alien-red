@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Film, Home, Menu, Search, X, Cigarette, List } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Film, Home, Menu, Search, X, Cigarette, List, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -17,6 +19,14 @@ const Header: React.FC = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isGenresPage = location.pathname.startsWith("/genres");
+  const navigate = useNavigate();
+
+  const { session } = useAuth();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate('/');
+  };
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -103,6 +113,21 @@ const Header: React.FC = () => {
             <SearchBar />
           </div>
 
+          {!session ? (
+            <>
+              <Link to="/login">
+                <Button variant="ghost" className="hidden md:inline-flex">Login</Button>
+              </Link>
+              <Link to="/register">
+                <Button variant="default" className="hidden md:inline-flex">Register</Button>
+              </Link>
+            </>
+          ) : (
+            <Button variant="ghost" onClick={handleLogout} className="hidden md:inline-flex">
+              <LogOut className="h-4 w-4 mr-2" /> Logout
+            </Button>
+          )}
+
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button
@@ -157,6 +182,26 @@ const Header: React.FC = () => {
                       </Button>
                     </SheetClose>
                   ))}
+                  {!session ? (
+                    <>
+                      <SheetClose asChild>
+                        <Link to="/login">
+                          <Button variant="ghost" className="justify-start w-full">Login</Button>
+                        </Link>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <Link to="/register">
+                          <Button variant="default" className="justify-start w-full">Register</Button>
+                        </Link>
+                      </SheetClose>
+                    </>
+                  ) : (
+                    <SheetClose asChild>
+                      <Button variant="ghost" onClick={handleLogout} className="justify-start w-full">
+                        <LogOut className="h-4 w-4 mr-2" /> Logout
+                      </Button>
+                    </SheetClose>
+                  )}
                 </nav>
               </div>
             </SheetContent>
