@@ -5,6 +5,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import MediaCarousel from "@/components/MediaCarousel";
 import HeroSection from "@/components/HeroSection";
 import { useWatchlist } from "@/contexts/WatchlistContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
+import { ToastAction } from "@/components/ui/toast";
 import MediaCard from "@/components/MediaCard";
 import { Helmet } from "react-helmet-async";
 
@@ -27,6 +31,29 @@ const HomePage: React.FC = () => {
   const [isWatchlistLoading, setIsWatchlistLoading] = useState(true);
   const { continueWatching, watchlist, removeFromContinueWatching } =
     useWatchlist();
+  const { session, loading: authLoading } = useAuth();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (!authLoading && !session) {
+      // Add a small delay to ensure the toast system is ready
+      const timer = setTimeout(() => {
+        toast({
+          title: "Authentication is here 🎉 ",
+          description:
+            "Login to save your watchlist and continue watching progress.",
+          duration: 2500,
+          action: (
+            <Link to="/register">
+              <ToastAction altText="Register">Register</ToastAction>
+            </Link>
+          ),
+        });
+      }, 100); // 100ms delay
+
+      return () => clearTimeout(timer);
+    }
+  }, [session, authLoading, toast]);
   const [continueWatchingItems, setContinueWatchingItems] = useState<
     (Movie | TVShow)[]
   >([]);
