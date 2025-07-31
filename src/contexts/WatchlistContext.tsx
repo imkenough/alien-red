@@ -107,9 +107,7 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [session, authLoading, fetchUserWatchlist, fetchUserContinueWatching]);
 
   const addToWatchlist = useCallback(async (item: WatchlistItem) => {
-    console.log("WatchlistContext: addToWatchlist called with item:", item);
     if (!session?.user) {
-      console.warn("WatchlistContext: User not authenticated. Cannot add to watchlist.");
       return;
     }
 
@@ -145,9 +143,7 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [session]);
 
   const removeFromWatchlist = useCallback(async (mediaId: number) => {
-    console.log("WatchlistContext: removeFromWatchlist called with mediaId:", mediaId);
     if (!session?.user) {
-      console.warn("WatchlistContext: User not authenticated. Cannot remove from watchlist.");
       return;
     }
 
@@ -178,7 +174,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const isInWatchlist = useCallback(
     (mediaId: number) => {
-      console.log("WatchlistContext: isInWatchlist called with mediaId:", mediaId);
       return watchlist.some((item) => item.id === mediaId);
     },
     [watchlist]
@@ -309,7 +304,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const updateContinueWatching = useCallback(async (item: ContinueWatchingItem) => {
     if (!session?.user) {
-      console.warn("User not authenticated. Cannot update continue watching.");
       return;
     }
 
