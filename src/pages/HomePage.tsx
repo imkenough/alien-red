@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
           title: "Authentication is here 🎉 ",
           description:
             "Login to save your watchlist and continue watching progress.",
-          duration: 2500,
+          duration: 3500,
           action: (
             <Link to="/register">
               <ToastAction altText="Register">Register</ToastAction>
