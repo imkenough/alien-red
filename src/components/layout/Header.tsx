@@ -146,7 +146,7 @@ const Header: React.FC = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[280px] sm:w-[350px] bg-background/95 backdrop-blur-md border-l border-border/50"
+              className="w-[280px] sm:w-[350px] bg-background/95 backdrop-blur-md border-l border-border/50 z-[1000]"
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-6 sm:mb-8">
