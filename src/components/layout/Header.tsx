@@ -71,18 +71,24 @@ const Header: React.FC = () => {
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center gap-4 sm:gap-8">
-          <Link
-            to="/"
-            className="flex items-center space-x-2 transition-transform hover:scale-105"
-          >
-            <Cigarette className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-            <span className="font-oswald font-bold text-lg sm:text-xl bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              Alien
-            </span>
-          </Link>
+        <Link
+          to="/"
+          className="flex items-center space-x-2 transition-transform hover:scale-105"
+        >
+          <Cigarette className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+          <span className="font-oswald font-bold text-lg sm:text-xl bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            Alien
+          </span>
+        </Link>
 
-          <nav className="hidden md:flex items-center space-x-1">
+        {/* Mobile Search Bar */}
+        <div className="flex-grow mx-4 md:hidden">
+          <SearchBar />
+        </div>
+
+        {/* Desktop Navigation and Search Bar */}
+        <div className="hidden md:flex items-center gap-4">
+          <nav className="flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
                 key={item.path}
@@ -106,13 +112,13 @@ const Header: React.FC = () => {
               </Button>
             ))}
           </nav>
-        </div>
-
-        <div className="flex items-center gap-2 sm:gap-4">
-          <div className="hidden sm:block w-64 md:w-80 lg:w-96">
+          <div className="w-64 lg:w-96">
             <SearchBar />
           </div>
+        </div>
 
+        {/* Auth Buttons and Hamburger Menu */}
+        <div className="flex items-center gap-2 sm:gap-4">
           {!session ? (
             <>
               <Link to="/login">
@@ -133,7 +139,7 @@ const Header: React.FC = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden hover:bg-white/5"
+                className="md:hidden hover:bg-white/5 z-[999]"
               >
                 <Menu className="h-5 w-5" />
               </Button>
@@ -152,10 +158,6 @@ const Header: React.FC = () => {
                       </span>
                     </Link>
                   </SheetClose>
-                </div>
-
-                <div className="sm:hidden mb-6">
-                  <SearchBar onSelect={() => setIsMobileMenuOpen(false)} />
                 </div>
 
                 <nav className="flex flex-col space-y-2">
