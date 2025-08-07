@@ -89,7 +89,7 @@ const MoviesPage: React.FC = () => {
         <meta property="og:title" content="Movies - Alien Streaming" />
         <meta property="og:description" content="Browse popular, trending, and top-rated movies. Discover new films and manage your watchlist on Alien." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/movies" />
+        <meta property="og:url" content="https://alienred.ddnsfree.com/movies" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Movies - Alien Streaming" />

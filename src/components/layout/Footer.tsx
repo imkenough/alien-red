@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Twitter, Instagram, Youtube, Cigarette } from "lucide-react";
+import { Cigarette } from "lucide-react";
+import { FaDiscord, FaInstagram, FaEnvelope} from "react-icons/fa6";
 import { Separator } from "@/components/ui/separator";
 
 const Footer: React.FC = () => {
@@ -24,33 +25,26 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/imkenough"
+                href="mailto:redjohn9818@proton.me"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="GitHub"
+                aria-label="Mail"
               >
-                <Github className="h-5 w-5" />
+                <FaEnvelope className="h-5 w-5" />
               </a>
-              {/* <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a> */}
               <a
-                href="https://www.instagram.com/ryangoslingoffical__/"
+                href="https://discord.com/users/clueless1006"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Discord"
+              >
+                <FaDiscord className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/ryangoslingoffical__"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <FaInstagram className="h-5 w-5" />
               </a>
-              {/* <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-              </a> */}
             </div>
           </div>
 

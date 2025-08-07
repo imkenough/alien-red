@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Cat } from "lucide-react";
+import { FaDiscord, FaInstagram, FaEnvelope} from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -21,7 +22,7 @@ const AboutPage: React.FC = () => {
           content="Learn more about Alien, our mission, data sources, and commitment to providing a modern streaming experience."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/about" />
+        <meta property="og:url" content="https://alienred.ddnsfree.com/about" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Alien - Streaming Platform" />
@@ -104,16 +105,7 @@ const AboutPage: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Socials</h2>
               <p></p>
-              <ul className="list-disc pl-6 mt-4 space-y-2">
-                <li>
-                  GitHub:{" "}
-                  <a
-                    href="https://github.com/imkenough"
-                    className="text-primary hover:underline"
-                  >
-                    @imkenough
-                  </a>
-                </li>
+              {/* <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>
                   Instagram:{" "}
                   <a
@@ -122,14 +114,45 @@ const AboutPage: React.FC = () => {
                   >
                     @ryangoslingoffical__
                   </a>
+                  <sup> *jk i'm pbviously not Ryan Gosling</sup>
                 </li>
-              </ul>
+              </ul> */}
+                            <div className="space-y-4">
+                              <div className="flex items-center space-x-3">
+                                <FaEnvelope className="h-5 w-5 text-primary" />
+                                <a
+                                  href="mailto:redjohn9818@proton.me"
+                                  className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  redjohn9818@proton.me
+                                </a>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <FaDiscord className="h-5 w-5 text-primary" />
+                                <a
+                                  href="https://discord.com/users/clueless1006"
+                                  className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  clueless1006
+                                </a>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <FaInstagram className="h-5 w-5 text-primary" />
+                                <a
+                                  href="https://www.instagram.com/ryangoslingoffical__/"
+                                  className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  @ryangoslingoffical__
+                                </a>
+                                <sup> *jk i'm pbviously not Ryan Gosling</sup>
+                              </div>
+                            </div>
             </section>
 
-            <section>
+            {/* <section>
               <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-              <p>Have questions, suggestions, or feedback? stfu.</p>
-            </section>
+              <p>Have questions, suggestions, or feedback?</p>
+            </section> */}
           </div>
         </div>
       </div>

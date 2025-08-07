@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Github, Instagram } from "lucide-react";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+import { FaDiscord, FaInstagram, FaEnvelope} from "react-icons/fa6";
 import { Helmet } from 'react-helmet-async';
 
 const ContactPage: React.FC = () => {
@@ -24,7 +24,7 @@ const ContactPage: React.FC = () => {
         <meta property="og:title" content="Contact - Alien Streaming" />
         <meta property="og:description" content="Contact the Alien team for questions, suggestions, or feedback. Get in touch with us here." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/contact" />
+        <meta property="og:url" content="https://alienred.ddnsfree.com/contact" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact - Alien Streaming" />
@@ -44,88 +44,40 @@ const ContactPage: React.FC = () => {
             <div>
               <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
               <p className="text-muted-foreground mb-6">
-                Have questions, suggestions, or feedback? stfu. But if it's a good
-                suggestion tell me.
+                Have questions, suggestions, or feedback? Mail me? or discord!
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Github className="h-5 w-5 text-primary" />
+                  <FaEnvelope className="h-5 w-5 text-primary" />
                   <a
-                    href="https://github.com/imkenough"
+                    href="mailto:redjohn9818@proton.me"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    @imkenough
+                    redjohn9818@proton.me
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Instagram className="h-5 w-5 text-primary" />
+                  <FaDiscord className="h-5 w-5 text-primary" />
+                  <a
+                    href="https://discord.com/users/clueless1006"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    clueless1006
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaInstagram className="h-5 w-5 text-primary" />
                   <a
                     href="https://www.instagram.com/ryangoslingoffical__/"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     @ryangoslingoffical__
                   </a>
+                  <sup> *jk i'm pbviously not Ryan Gosling</sup>
                 </div>
               </div>
             </div>
-
-            {/* <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <Input id="name" name="name" placeholder="Your name" required />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Subject
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  placeholder="What's this about?"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your message..."
-                  className="min-h-[150px]"
-                  required
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form> */}
           </div>
         </div>
       </div>

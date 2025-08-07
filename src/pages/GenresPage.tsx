@@ -184,7 +184,7 @@ const GenresPage: React.FC = () => {
         <meta property="og:title" content="Genres - Alien Streaming" />
         <meta property="og:description" content="Browse movies and TV shows by genre. Find your favorite genres and discover new content on Alien." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/genres" />
+        <meta property="og:url" content="https://alienred.ddnsfree.com/genres" />
         <meta property="og:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Genres - Alien Streaming" />
