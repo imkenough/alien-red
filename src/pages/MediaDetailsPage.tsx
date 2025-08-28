@@ -69,6 +69,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const [selectedAnimeDub, setSelectedAnimeDub] = useState<boolean>(false);
   const [pingTimes, setPingTimes] = useState<Record<string, number | null>>({});
   const [optimalServer, setOptimalServer] = useState<string | null>(null);
+  const [rankedServers, setRankedServers] = useState<string[]>([]);
 
   const servers = [
     { id: "vidfast", name: "VidFast", url: "https://vidfast.pro", streamUrl: "https://vidfast.pro" },
@@ -104,6 +105,10 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
           return current[1] < best[1] ? current : best;
         });
         setOptimalServer(bestServer[0]);
+
+        // Rank servers by ping time
+        const sortedServers = validPings.sort((a, b) => a[1] - b[1]);
+        setRankedServers(sortedServers.map((s) => s[0]));
       }
     };
 
@@ -656,13 +661,17 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                           <span
                             className={cn(
                               "h-2 w-2 rounded-full mr-2",
-                              pingTimes[server.id] === null
-                                ? "bg-gray-400"
-                                : pingTimes[server.id]! < 200
-                                ? "bg-green-500"
-                                : pingTimes[server.id]! < 500
-                                ? "bg-yellow-500"
-                                : "bg-red-500"
+                              (() => {
+                                const rank = rankedServers.indexOf(server.id);
+                                if (rank === -1) return "bg-gray-400";
+                                const colors = [
+                                  "bg-green-500",
+                                  "bg-yellow-500",
+                                  "bg-orange-500",
+                                  "bg-red-500",
+                                ];
+                                return colors[rank] || "bg-red-500";
+                              })()
                             )}
                           ></span>
                           <span>{server.name}</span>
