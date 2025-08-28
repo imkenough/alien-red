@@ -51,7 +51,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isWatching, setIsWatching] = useState(false);
+  const [isWatching, setIsWatching] = useState(location.state?.play || false);
   const {
     isInWatchlist,
     addToWatchlist,
@@ -59,10 +59,22 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     updateContinueWatching,
   } = useWatchlist();
   const navigate = useNavigate();
-  const [selectedServer, setSelectedServer] = useState<string>("vidfast");
+  const [selectedServer, setSelectedServer] = useState<string>(
+    () => localStorage.getItem("selectedServer") || "vidfast"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("selectedServer", selectedServer);
+  }, [selectedServer]);
   const [selectedAnimeDub, setSelectedAnimeDub] = useState<boolean>(false);
 
   const inWatchlist = media ? isInWatchlist(media.id) : false;
+
+  useEffect(() => {
+    if (location.state?.play) {
+      handleWatchNow();
+    }
+  }, [location.state?.play]);
 
   useEffect(() => {
     const fetchMediaDetails = async () => {
@@ -275,7 +287,9 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   };
 
   const handleWatchNow = () => {
-    setIsWatching(true);
+    if (!isWatching) {
+      setIsWatching(true);
+    }
 
     // Add to continue watching
     if (media) {

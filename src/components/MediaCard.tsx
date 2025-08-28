@@ -75,7 +75,9 @@ const MediaCard = ({
       )}
       <Link
         to={`/${mediaType}/${id}`}
-        state={continueWatchingData ? { continueWatchingData } : undefined}
+        state={
+          continueWatchingData ? { continueWatchingData, play: true } : undefined
+        }
       >
         <Card
           className={cn(
