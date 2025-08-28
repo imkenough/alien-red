@@ -292,8 +292,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
         ? "https://vidsrc.xyz/embed"
         : selectedServer === "vidfast"
         ? "https://vidfast.pro"
-        : selectedServer === "embedsu"
-        ? "https://embed.su/embed"
         : selectedServer === "videasy"
         ? "https://player.videasy.net"
         : "https://vidfast.pro"; // Default to vidfast
@@ -555,12 +553,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                         VidFast (Recommended)
                       </div>
                     </SelectItem>
-                    <SelectItem value="embedsu">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                        Embed.su
-                      </div>
-                    </SelectItem>
                     <SelectItem value="vidsrc">
                       <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-green-500"></span>
@@ -607,6 +599,52 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                       </SelectContent>
                     </Select>
                   </div>
+
+                  {/* Selected episode details */}
+                  {selectedEpisode && (
+                    <Card className="p-4 mb-4">
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        {selectedEpisode.still_path && (
+                          <img
+                            src={
+                              getPosterUrl(
+                                selectedEpisode.still_path,
+                                "w500"
+                              ) || ""
+                            }
+                            alt={selectedEpisode.name || "Episode thumbnail"}
+                            className="rounded-md w-full sm:w-64 h-auto object-cover"
+                          />
+                        )}
+                        <div className="flex-1">
+                          <h3 className="text-xl font-medium">
+                            {selectedEpisode.episode_number}.{" "}
+                            {selectedEpisode.name}
+                          </h3>
+                          {selectedEpisode.air_date && (
+                            <p className="text-sm text-muted-foreground mt-1">
+                              Air date:{" "}
+                              {new Date(
+                                selectedEpisode.air_date
+                              ).toLocaleDateString()}
+                            </p>
+                          )}
+                          <p className="text-muted-foreground mt-2">
+                            {selectedEpisode.overview ||
+                              "No description available."}
+                          </p>
+                          <Button
+                            size="lg"
+                            className="mt-4 w-full"
+                            onClick={handleWatchNow}
+                          >
+                            <Play className="mr-2 h-5 w-5" />
+                            Play Episode
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  )}
 
                   {/* Netflix-style episode list */}
                   <div className="relative">
@@ -668,52 +706,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* Selected episode details */}
-                  {selectedEpisode && (
-                    <Card className="p-4 mt-4">
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        {selectedEpisode.still_path && (
-                          <img
-                            src={
-                              getPosterUrl(
-                                selectedEpisode.still_path,
-                                "w500"
-                              ) || ""
-                            }
-                            alt={selectedEpisode.name || "Episode thumbnail"}
-                            className="rounded-md w-full sm:w-64 h-auto object-cover"
-                          />
-                        )}
-                        <div className="flex-1">
-                          <h3 className="text-xl font-medium">
-                            {selectedEpisode.episode_number}.{" "}
-                            {selectedEpisode.name}
-                          </h3>
-                          {selectedEpisode.air_date && (
-                            <p className="text-sm text-muted-foreground mt-1">
-                              Air date:{" "}
-                              {new Date(
-                                selectedEpisode.air_date
-                              ).toLocaleDateString()}
-                            </p>
-                          )}
-                          <p className="text-muted-foreground mt-2">
-                            {selectedEpisode.overview ||
-                              "No description available."}
-                          </p>
-                          <Button
-                            size="lg"
-                            className="mt-4 w-full"
-                            onClick={handleWatchNow}
-                          >
-                            <Play className="mr-2 h-5 w-5" />
-                            Play Episode
-                          </Button>
-                        </div>
-                      </div>
-                    </Card>
-                  )}
                 </div>
               )}
 
