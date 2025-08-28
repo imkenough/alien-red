@@ -67,6 +67,50 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     localStorage.setItem("selectedServer", selectedServer);
   }, [selectedServer]);
   const [selectedAnimeDub, setSelectedAnimeDub] = useState<boolean>(false);
+  const [pingTimes, setPingTimes] = useState<Record<string, number | null>>({});
+  const [optimalServer, setOptimalServer] = useState<string | null>(null);
+
+  const servers = [
+    { id: "vidfast", name: "VidFast", url: "https://vidfast.pro", streamUrl: "https://vidfast.pro" },
+    { id: "videasy", name: "Videasy", url: "https://www.videasy.net", streamUrl: "https://player.videasy.net" },
+    { id: "vidsrc", name: "VidSrc", url: "https://vidsrc.xyz", streamUrl: "https://vidsrc.xyz/embed" },
+  ];
+
+  useEffect(() => {
+    const pingServer = async (url: string) => {
+      const startTime = Date.now();
+      try {
+        await fetch(url, { method: "HEAD", mode: "no-cors" });
+        const endTime = Date.now();
+        return endTime - startTime;
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const updatePings = async () => {
+      const newPingTimes: Record<string, number | null> = {};
+      for (const server of servers) {
+        const time = await pingServer(server.url);
+        newPingTimes[server.id] = time;
+      }
+      setPingTimes(newPingTimes);
+
+      // Find the optimal server
+      const validPings = Object.entries(newPingTimes).filter(([, time]) => time !== null) as [string, number][];
+      if (validPings.length > 0) {
+        const bestServer = validPings.reduce((best, current) => {
+          return current[1] < best[1] ? current : best;
+        });
+        setOptimalServer(bestServer[0]);
+      }
+    };
+
+    updatePings();
+    const interval = setInterval(updatePings, 10000); // Ping every n seconds
+
+    return () => clearInterval(interval); 
+  }, []);
 
   const inWatchlist = media ? isInWatchlist(media.id) : false;
 
@@ -356,14 +400,15 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const getStreamingUrl = () => {
     if (!media || !mediaType) return "";
 
-    const baseUrl =
-      selectedServer === "vidsrc"
-        ? "https://vidsrc.xyz/embed"
-        : selectedServer === "vidfast"
-        ? "https://vidfast.pro"
-        : selectedServer === "videasy"
-        ? "https://player.videasy.net"
-        : "https://vidfast.pro"; // Default to vidfast
+    const server = servers.find((s) => s.id === selectedServer);
+    const baseUrl = server ? server.streamUrl : servers[0].streamUrl; // Default to first server
+
+    if (selectedServer === "vidsrc") {
+      if (mediaType === "movie") {
+        return `${baseUrl}/movie?tmdb=${id}`;
+      }
+      return `${baseUrl}/tv?tmdb=${id}&season=${selectedSeason?.season_number || 1}&episode=${selectedEpisode?.episode_number || 1}`;
+    }
 
     if (selectedServer === "videasy") {
       // Videasy logic
@@ -391,25 +436,13 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
       return "";
     }
 
-    // Existing logic for other servers
+    // Logic for other servers
     if (mediaType === "movie") {
-      return selectedServer === "vidfast"
-        ? `${baseUrl}/movie/${id}`
-        : selectedServer === "embedsu"
-        ? `${baseUrl}/movie/${id}`
-        : `${baseUrl}/movie?tmdb=${id}`;
+      return `${baseUrl}/movie/${id}`;
     } else {
-      return selectedServer === "vidfast"
-        ? `${baseUrl}/tv/${id}/${selectedSeason?.season_number || 1}/${
-            selectedEpisode?.episode_number || 1
-          }`
-        : selectedServer === "embedsu"
-        ? `${baseUrl}/tv/${id}/${selectedSeason?.season_number || 1}/${
-            selectedEpisode?.episode_number || 1
-          }`
-        : `${baseUrl}/tv?tmdb=${id}&season=${
-            selectedSeason?.season_number || 1
-          }&episode=${selectedEpisode?.episode_number || 1}`;
+      return `${baseUrl}/tv/${id}/${selectedSeason?.season_number || 1}/${
+        selectedEpisode?.episode_number || 1
+      }`;
     }
   };
 
@@ -616,24 +649,35 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                     <SelectValue placeholder="Select Server" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="vidfast">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-orange-500"></span>
-                        VidFast (Recommended)
-                      </div>
-                    </SelectItem>
-                    <SelectItem value="videasy">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-purple-600"></span>
-                        Videasy
-                      </div>
-                    </SelectItem>
-                    <SelectItem value="vidsrc">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-green-500"></span>
-                        VidSrc
-                      </div>
-                    </SelectItem>
+                    {servers.map((server) => (
+                      <SelectItem key={server.id} value={server.id}>
+                        <div className="flex items-center">
+                          <span
+                            className={cn(
+                              "h-2 w-2 rounded-full mr-2",
+                              pingTimes[server.id] === null
+                                ? "bg-gray-400"
+                                : pingTimes[server.id]! < 200
+                                ? "bg-green-500"
+                                : pingTimes[server.id]! < 500
+                                ? "bg-yellow-500"
+                                : "bg-red-500"
+                            )}
+                          ></span>
+                          <span>{server.name}</span>
+                          <span className="text-xs text-muted-foreground ml-2">
+                            {pingTimes[server.id] === null
+                              ? "(Pinging...)"
+                              : `(${pingTimes[server.id]}ms)`}
+                          </span>
+                          {server.id === optimalServer && (
+                            <span className="text-xs text-primary ml-1">
+                              (optimal)
+                            </span>
+                          )}
+                        </div>
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
