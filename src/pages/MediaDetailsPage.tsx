@@ -589,16 +589,16 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                         VidFast (Recommended)
                       </div>
                     </SelectItem>
-                    <SelectItem value="vidsrc">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-green-500"></span>
-                        VidSrc
-                      </div>
-                    </SelectItem>
                     <SelectItem value="videasy">
                       <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-purple-600"></span>
                         Videasy
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="vidsrc">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                        VidSrc
                       </div>
                     </SelectItem>
                   </SelectContent>
