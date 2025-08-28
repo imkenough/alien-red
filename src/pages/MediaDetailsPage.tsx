@@ -24,7 +24,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, Play, Plus, Star, Server } from "lucide-react";
+import {
+  Heart,
+  Play,
+  Plus,
+  Star,
+  Server,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import VideoPlayer from "@/components/VideoPlayer";
 import { cn } from "@/lib/utils";
 import { useWatchlist } from "@/contexts/WatchlistContext";
@@ -235,6 +243,34 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
       // Update URL parameters
       const currentSeason = selectedSeason?.season_number.toString() || "1";
       setSearchParams({ season: currentSeason, episode: episodeNumber });
+    }
+  };
+
+  const handleNextEpisode = () => {
+    if (!selectedEpisode) return;
+    const currentIndex = episodes.findIndex((e) => e.id === selectedEpisode.id);
+    if (currentIndex < episodes.length - 1) {
+      const nextEpisode = episodes[currentIndex + 1];
+      setSelectedEpisode(nextEpisode);
+      const currentSeason = selectedSeason?.season_number.toString() || "1";
+      setSearchParams({
+        season: currentSeason,
+        episode: nextEpisode.episode_number.toString(),
+      });
+    }
+  };
+
+  const handlePreviousEpisode = () => {
+    if (!selectedEpisode) return;
+    const currentIndex = episodes.findIndex((e) => e.id === selectedEpisode.id);
+    if (currentIndex > 0) {
+      const prevEpisode = episodes[currentIndex - 1];
+      setSelectedEpisode(prevEpisode);
+      const currentSeason = selectedSeason?.season_number.toString() || "1";
+      setSearchParams({
+        season: currentSeason,
+        episode: prevEpisode.episode_number.toString(),
+      });
     }
   };
 
@@ -602,7 +638,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
 
                   {/* Selected episode details */}
                   {selectedEpisode && (
-                    <Card className="p-4 mb-4">
+                    <Card className="p-4 mb-4 relative">
                       <div className="flex flex-col sm:flex-row gap-4">
                         {selectedEpisode.still_path && (
                           <img
@@ -642,6 +678,24 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
                             Play Episode
                           </Button>
                         </div>
+                      </div>
+                      <div className="absolute top-4 right-4 flex gap-2">
+                        <Button
+                          size="icon"
+                          variant="outline"
+                          onClick={handlePreviousEpisode}
+                          disabled={episodes.findIndex(e => e.id === selectedEpisode.id) === 0}
+                        >
+                          <ChevronLeft className="h-5 w-5" />
+                        </Button>
+                        <Button
+                          size="icon"
+                          variant="outline"
+                          onClick={handleNextEpisode}
+                          disabled={episodes.findIndex(e => e.id === selectedEpisode.id) === episodes.length - 1}
+                        >
+                          <ChevronRight className="h-5 w-5" />
+                        </Button>
                       </div>
                     </Card>
                   )}
