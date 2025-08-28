@@ -232,6 +232,25 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     }
   }, [selectedSeason, id, mediaType, continueWatchingData]);
 
+  useEffect(() => {
+    if (selectedEpisode && media) {
+      const title = "title" in media ? media.title : media.name;
+      updateContinueWatching({
+        id: media.id,
+        title: title || "Untitled",
+        poster_path: media.poster_path,
+        media_type: mediaType as "movie" | "tv",
+        progress: 0,
+        last_watched: Date.now(),
+        added_at: Date.now(),
+        season: selectedSeason?.season_number,
+        episode: selectedEpisode?.episode_number,
+        watched: false,
+        watch_later: false,
+      });
+    }
+  }, [selectedEpisode, media, mediaType, selectedSeason, updateContinueWatching]);
+
   const handleSeasonChange = (seasonNumber: string) => {
     if (!media || mediaType !== "tv") return;
 
