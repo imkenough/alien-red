@@ -493,6 +493,36 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
             src={getStreamingUrl()}
             title={getMediaTitle() || "Untitled"}
           />
+          {/* Mobile-only episode navigation */}
+          {mediaType === "tv" && selectedEpisode && (
+            <div className="md:hidden flex gap-4 mt-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex-1"
+                onClick={handlePreviousEpisode}
+                disabled={
+                  episodes.findIndex((e) => e.id === selectedEpisode.id) === 0
+                }
+              >
+                <ChevronLeft className="mr-2 h-4 w-4" />
+                Prev
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex-1"
+                onClick={handleNextEpisode}
+                disabled={
+                  episodes.findIndex((e) => e.id === selectedEpisode.id) ===
+                  episodes.length - 1
+                }
+              >
+                Next
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          )}
         </div>
       )}
 
@@ -516,8 +546,7 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
       <div
         className={cn(
           "container px-4 sm:px-6 md:px-8 relative z-10",
-          !isWatching && "-mt-16 md:-mt-24",
-          "pt-8"
+          !isWatching && "-mt-16 md:-mt-24 pt-8"
         )}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
