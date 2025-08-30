@@ -338,6 +338,25 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
     }
   };
 
+  useEffect(() => {
+    if (isWatching && media && mediaType === 'tv' && selectedEpisode) {
+      const title = "title" in media ? media.title : media.name;
+      updateContinueWatching({
+        id: media.id,
+        title: title || "Untitled",
+        poster_path: media.poster_path,
+        media_type: mediaType as "tv",
+        progress: 0,
+        last_watched: Date.now(),
+        added_at: Date.now(),
+        season: selectedSeason?.season_number,
+        episode: selectedEpisode?.episode_number,
+        watched: false,
+        watch_later: false,
+      });
+    }
+  }, [selectedEpisode, isWatching, media, mediaType, updateContinueWatching, selectedSeason]);
+
   const handleWatchNow = () => {
     if (!isWatching) {
       setIsWatching(true);
