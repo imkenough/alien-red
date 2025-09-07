@@ -311,15 +311,14 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .from('user_continue_watching')
       .select('id')
       .eq('user_id', session.user.id)
-      .eq('media_id', item.id)
-      .single();
+      .eq('media_id', item.id);
 
-    if (fetchError && fetchError.code !== 'PGRST116') { // PGRST116 means no rows found
+    if (fetchError) {
       console.error("Error checking existing continue watching item:", fetchError);
       return;
     }
 
-    if (existingItems) {
+    if (existingItems && existingItems.length > 0) {
       // Update existing item
       const { error } = await supabase
         .from('user_continue_watching')
@@ -329,7 +328,7 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
           season: item.season || null,
           episode: item.episode || null,
         })
-        .eq('id', existingItems.id);
+        .eq('id', existingItems[0].id);
 
       if (error) {
         console.error("Error updating continue watching item:", error);
@@ -381,25 +380,32 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
   const removeFromContinueWatching = useCallback(async (mediaId: number) => {
     if (!session?.user) return;
 
-    const { data: existingItem, error: fetchError } = await supabase
+    const { data: existingItems, error: fetchError } = await supabase
       .from('user_continue_watching')
-      .select('supabase_id:id')
+      .select('id')
       .eq('user_id', session.user.id)
-      .eq('media_id', mediaId)
-      .single();
+      .eq('media_id', mediaId);
 
-    if (fetchError || !existingItem) {
+    if (fetchError) {
       console.error("Error finding continue watching item to remove:", fetchError);
       return;
     }
 
-    const { error } = await supabase
-      .from('user_continue_watching')
-      .delete()
-      .eq('id', existingItem.supabase_id);
+    if (!existingItems || existingItems.length === 0) {
+      console.log("No continue watching item to remove.");
+      return;
+    }
 
-    if (error) {
-      console.error("Error removing from continue watching:", error);
+    // In case of duplicates, delete all of them
+    const deletePromises = existingItems.map(item =>
+      supabase.from('user_continue_watching').delete().eq('id', item.id)
+    );
+
+    const results = await Promise.all(deletePromises);
+    const errors = results.filter(res => res.error);
+
+    if (errors.length > 0) {
+      console.error("Error removing from continue watching:", errors.map(e => e.error));
     } else {
       setContinueWatching((prev) => prev.filter((item) => item.id !== mediaId));
     }
