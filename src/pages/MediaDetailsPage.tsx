@@ -72,10 +72,10 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
   const [rankedServers, setRankedServers] = useState<string[]>([]);
 
   const servers = [
+    { id: "vidrock", name: "Vidrock", url: "https://vidrock.net", streamUrl: "https://vidrock.net" },
     { id: "vidfast", name: "VidFast", url: "https://vidfast.pro", streamUrl: "https://vidfast.pro" },
     { id: "videasy", name: "Videasy", url: "https://www.videasy.net", streamUrl: "https://player.videasy.net" },
     { id: "vidsrc", name: "VidSrc", url: "https://vidsrc.xyz", streamUrl: "https://vidsrc.xyz/embed" },
-    { id: "vidrock", name: "Vidrock", url: "https://vidrock.net", streamUrl: "https://vidrock.net" },
   ];
 
   useEffect(() => {
