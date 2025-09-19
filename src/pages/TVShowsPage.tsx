@@ -50,7 +50,6 @@ const TVShowsPage: React.FC = () => {
 
         setTotalPages(Math.min(data.total_pages, 10)); // Limit to 10 pages
       } catch (error) {
-        console.error("Error fetching TV shows:", error);
       } finally {
         setIsLoading(false);
       }

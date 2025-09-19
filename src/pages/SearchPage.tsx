@@ -41,7 +41,6 @@ const SearchPage: React.FC = () => {
         setResults(data.results);
         setTotalPages(Math.min(data.total_pages, 10)); // Limit to 10 pages
       } catch (error) {
-        console.error("Search error:", error);
       } finally {
         setIsLoading(false);
       }

@@ -34,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className, onSelect }) => {
           setResults(data.results.slice(0, 8)); // Limit to 8 results
           setIsOpen(true);
         })
-        .catch((error) => console.error("Search error:", error))
+        .catch((error) => {})
         .finally(() => setIsLoading(false));
     } else {
       setResults([]);

@@ -213,7 +213,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
           }
         }
       } catch (error) {
-        console.error("Error fetching media details:", error);
       } finally {
         setIsLoading(false);
       }
@@ -274,7 +273,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
             setSelectedEpisode(null);
           }
         } catch (error) {
-          console.error("Error fetching season details:", error);
         }
       };
 
@@ -386,9 +384,6 @@ const MediaDetailsPage: React.FC<MediaDetailsPageProps> = () => {
 
   const handleWatchlistToggle = () => {
     if (!media) return;
-
-    console.log("handleWatchlistToggle called for media ID:", media.id);
-    console.log("Current inWatchlist status:", inWatchlist);
 
     const title = "title" in media ? media.title : media.name;
 

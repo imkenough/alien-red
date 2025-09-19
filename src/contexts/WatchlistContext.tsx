@@ -49,7 +49,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('user_id', session.user.id);
 
     if (error) {
-      console.error("Error fetching watchlist:", error);
       setWatchlist([]);
     } else {
       setWatchlist(data.map(item => ({
@@ -81,7 +80,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .order('last_watched', { ascending: false });
 
     if (error) {
-      console.error("Error fetching continue watching:", error);
       setContinueWatching([]);
     } else {
       setContinueWatching(data.map(item => ({
@@ -128,7 +126,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .select();
 
     if (error) {
-      console.error("Error adding to watchlist:", error);
     } else if (data) {
       setWatchlist((prev) => [
         {
@@ -156,7 +153,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .single();
 
     if (fetchError || !existingItem) {
-      console.error("Error finding watchlist item to remove:", fetchError);
       return;
     }
 
@@ -166,7 +162,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('id', existingItem.supabase_id);
 
     if (error) {
-      console.error("Error removing from watchlist:", error);
     } else {
       setWatchlist((prev) => prev.filter((item) => item.id !== mediaId));
     }
@@ -191,7 +186,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('id', itemToUpdate.supabase_id);
 
     if (error) {
-      console.error("Error toggling watched status:", error);
     } else {
       setWatchlist((prev) =>
         prev.map((item) =>
@@ -213,7 +207,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('id', itemToUpdate.supabase_id);
 
     if (error) {
-      console.error("Error toggling watch later status:", error);
     } else {
       setWatchlist((prev) =>
         prev.map((item) =>
@@ -235,7 +228,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('id', itemToUpdate.supabase_id);
 
     if (error) {
-      console.error("Error updating rating:", error);
     } else {
       setWatchlist((prev) =>
         prev.map((item) => (item.id === mediaId ? { ...item, rating } : item))
@@ -255,7 +247,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('id', itemToUpdate.supabase_id);
 
     if (error) {
-      console.error("Error updating notes:", error);
     } else {
       setWatchlist((prev) =>
         prev.map((item) => (item.id === mediaId ? { ...item, notes } : item))
@@ -314,7 +305,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('media_id', item.id);
 
     if (fetchError) {
-      console.error("Error checking existing continue watching item:", fetchError);
       return;
     }
 
@@ -331,7 +321,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
         .eq('id', existingItems[0].id);
 
       if (error) {
-        console.error("Error updating continue watching item:", error);
       } else {
         setContinueWatching((prev) =>
           prev.map((prevItem) =>
@@ -357,7 +346,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
         .select();
 
       if (error) {
-        console.error("Error inserting continue watching item:", error);
       } else if (data) {
         setContinueWatching((prev) => {
           const newList = [
@@ -387,12 +375,10 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
       .eq('media_id', mediaId);
 
     if (fetchError) {
-      console.error("Error finding continue watching item to remove:", fetchError);
       return;
     }
 
     if (!existingItems || existingItems.length === 0) {
-      console.log("No continue watching item to remove.");
       return;
     }
 
@@ -405,7 +391,6 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
     const errors = results.filter(res => res.error);
 
     if (errors.length > 0) {
-      console.error("Error removing from continue watching:", errors.map(e => e.error));
     } else {
       setContinueWatching((prev) => prev.filter((item) => item.id !== mediaId));
     }

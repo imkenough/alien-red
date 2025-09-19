@@ -172,7 +172,6 @@ const HomePage: React.FC = () => {
           tvData.results.map((show: TVShow) => ({ ...show, media_type: "tv" }))
         );
       } catch (error) {
-        console.error("Error fetching home data:", error);
       } finally {
         setIsLoading(false);
       }
@@ -203,10 +202,6 @@ const HomePage: React.FC = () => {
               }
               return details;
             } catch (error) {
-              console.error(
-                `Error fetching details for ${item.media_type} ${item.id}:`,
-                error
-              );
               // Return a fallback item with basic info if API call fails
               return item.media_type === "movie"
                 ? ({
@@ -238,7 +233,6 @@ const HomePage: React.FC = () => {
         );
         setContinueWatchingItems(items);
       } catch (error) {
-        console.error("Error fetching continue watching details:", error);
       }
     };
 
@@ -278,10 +272,6 @@ const HomePage: React.FC = () => {
                 itemsCache.current.set(item.id, details);
                 return details;
               } catch (error) {
-                console.error(
-                  `Error fetching details for ${item.media_type} ${item.id}:`,
-                  error
-                );
                 // Return a fallback item with basic info if API call fails
                 const fallbackItem = {
                   id: item.id,
@@ -310,7 +300,6 @@ const HomePage: React.FC = () => {
         );
         setWatchlistItems(orderedItems);
       } catch (error) {
-        console.error("Error fetching watchlist details:", error);
       } finally {
         setIsWatchlistLoading(false);
       }

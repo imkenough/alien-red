@@ -70,7 +70,6 @@ const GenresPage: React.FC = () => {
           navigate(`/genres/${movieGenresData[0].id}`);
         }
       } catch (error) {
-        console.error("Error fetching genres:", error);
       } finally {
         setIsLoading(false);
       }
@@ -107,7 +106,6 @@ const GenresPage: React.FC = () => {
         }
         setTotalPages(Math.min(data.total_pages, 10)); // Limit to 10 pages
       } catch (error) {
-        console.error("Error fetching content by genre:", error);
       } finally {
         setIsLoading(false);
       }

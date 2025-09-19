@@ -21,18 +21,8 @@ tmdbApi.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.error("TMDb API Error:", {
-        status: error.response.status,
-        data: error.response.data,
-      });
     } else if (error.request) {
-      // The request was made but no response was received
-      console.error("TMDb API Error: No response received");
     } else {
-      // Something happened in setting up the request that triggered an Error
-      console.error("TMDb API Error:", error.message);
     }
     return Promise.reject(error);
   }
@@ -49,7 +39,6 @@ export const api = {
       );
       return response.data;
     } catch (error) {
-      console.error("Error fetching trending content:", error);
       throw error;
     }
   },
@@ -62,7 +51,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error(`Error fetching popular ${mediaType}:`, error);
       throw error;
     }
   },
@@ -75,7 +63,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error(`Error fetching top rated ${mediaType}:`, error);
       throw error;
     }
   },
@@ -88,7 +75,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error searching content:", error);
       throw error;
     }
   },
@@ -101,7 +87,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error fetching movie details:", error);
       throw error;
     }
   },
@@ -114,7 +99,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error fetching TV details:", error);
       throw error;
     }
   },
@@ -125,7 +109,6 @@ export const api = {
       const response = await tmdbApi.get(`/tv/${tvId}/season/${seasonNumber}`);
       return response.data;
     } catch (error) {
-      console.error("Error fetching TV season details:", error);
       throw error;
     }
   },
@@ -150,7 +133,6 @@ export const api = {
       const response = await tmdbApi.get("/genre/movie/list");
       return response.data.genres;
     } catch (error) {
-      console.error("Error fetching movie genres:", error);
       throw error;
     }
   },
@@ -161,7 +143,6 @@ export const api = {
       const response = await tmdbApi.get("/genre/tv/list");
       return response.data.genres;
     } catch (error) {
-      console.error("Error fetching TV genres:", error);
       throw error;
     }
   },
@@ -178,7 +159,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error fetching movies by genre:", error);
       throw error;
     }
   },
@@ -195,7 +175,6 @@ export const api = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error fetching TV shows by genre:", error);
       throw error;
     }
   },
