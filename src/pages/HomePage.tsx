@@ -35,23 +35,21 @@ const HomePage: React.FC = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (!authLoading && !session) {
-      // Add a small delay to ensure the toast system is ready
-      const timer = setTimeout(() => {
-        toast({
-          title: "Merry Christmas 🎉 ",
-          description: "It's the most wonderful time of the year  ",
-          duration: 3500,
-          // action: (
-          //   <Link to="/register">
-          //     <ToastAction altText="Register">Register</ToastAction>
-          //   </Link>
-          // ),
-        });
-      }, 100); // 100ms delay
+    // Add a small delay to ensure the toast system is ready
+    const timer = setTimeout(() => {
+      toast({
+        title: "Merry Christmas 🎉 ",
+        description: "It's the most wonderful time of the year  ",
+        duration: 3500,
+        // action: (
+        //   <Link to="/register">
+        //     <ToastAction altText="Register">Register</ToastAction>
+        //   </Link>
+        // ),
+      });
+    }, 100); // 100ms delay
 
-      return () => clearTimeout(timer);
-    }
+    return () => clearTimeout(timer);
   }, [session, authLoading, toast]);
   const [continueWatchingItems, setContinueWatchingItems] = useState<
     (Movie | TVShow)[]
@@ -397,7 +395,7 @@ const HomePage: React.FC = () => {
         />
         <meta name="twitter:image" content="/favicon.svg" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         {isLoading ? (
           <div className="space-y-8 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <Skeleton className="h-[85vh] max-h-[900px] min-h-[600px] w-full rounded-lg" />

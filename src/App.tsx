@@ -9,9 +9,11 @@ const App: React.FC = () => {
   return (
     <ErrorBoundary>
       <Router>
-        <Snowfall />
-        <AppRoutes />
-        <Toaster />
+        <Snowfall className="fixed inset-0 z-0" />
+        <div className="relative z-10 bg-transparent">
+          <AppRoutes />
+          <Toaster />
+        </div>
       </Router>
     </ErrorBoundary>
   );

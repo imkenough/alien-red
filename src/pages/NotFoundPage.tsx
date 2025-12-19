@@ -12,7 +12,7 @@ const NotFoundPage: React.FC = () => {
         <title>404 Not Found - Alien Streaming</title>
         <meta name="description" content="The page you are looking for does not exist." />
       </Helmet>
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
+      <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <div className="max-w-md w-full space-y-4 text-center">
           <div className="flex justify-center">
             <AlertCircle className="h-12 w-12 text-destructive" />

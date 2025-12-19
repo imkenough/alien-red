@@ -95,7 +95,7 @@ const MoviesPage: React.FC = () => {
         <meta name="twitter:description" content="Browse popular, trending, and top-rated movies. Discover new films and manage your watchlist on Alien." />
         <meta name="twitter:image" content="/favicon.svg" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
           <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Movies</h1>
 
