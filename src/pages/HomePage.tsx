@@ -39,15 +39,14 @@ const HomePage: React.FC = () => {
       // Add a small delay to ensure the toast system is ready
       const timer = setTimeout(() => {
         toast({
-          title: "Authentication is here 🎉 ",
-          description:
-            "Login to save your watchlist and continue watching progress.",
+          title: "Merry Christmas 🎉 ",
+          description: "It's the most wonderful time of the year  ",
           duration: 3500,
-          action: (
-            <Link to="/register">
-              <ToastAction altText="Register">Register</ToastAction>
-            </Link>
-          ),
+          // action: (
+          //   <Link to="/register">
+          //     <ToastAction altText="Register">Register</ToastAction>
+          //   </Link>
+          // ),
         });
       }, 100); // 100ms delay
 
@@ -232,8 +231,7 @@ const HomePage: React.FC = () => {
           })
         );
         setContinueWatchingItems(items);
-      } catch (error) {
-      }
+      } catch (error) {}
     };
 
     fetchContinueWatchingDetails();
