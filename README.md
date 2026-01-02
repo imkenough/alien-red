@@ -3,6 +3,7 @@
 Alien is a modern streaming platform built with React, TypeScript, and Vite. It allows users to browse, search, and watch a wide variety of movies and TV shows. The platform fetches metadata from The Movie Database (TMDb) and uses VidSrc for streaming content.
 
 ## 💖 Support
+
 Pleae consider Starring this Repository :)
 
 <a href="https://www.star-history.com/#imkenough/alien-red&type=date&legend=top-left">
@@ -13,6 +14,9 @@ Pleae consider Starring this Repository :)
  </picture>
 </a>
 
+## 🚀 Live Demo
+
+[Link to Live Demo](https://www.alienred.ddnsfree.com/)
 
 ## ✨ Features
 
@@ -27,20 +31,20 @@ Pleae consider Starring this Repository :)
 ## 🛠️ Tech Stack
 
 - **Frontend:**
-    - React
-    - TypeScript
-    - Vite (Build Tool)
-    - Tailwind CSS (Styling)
-    - Radix UI (Headless UI Components)
-    - React Router DOM (Routing)
+  - React
+  - TypeScript
+  - Vite (Build Tool)
+  - Tailwind CSS (Styling)
+  - Radix UI (Headless UI Components)
+  - React Router DOM (Routing)
 - **State Management & API:**
-    - React Context API (for theme, watchlist)
-    - Axios (HTTP Client)
+  - React Context API (for theme, watchlist)
+  - Axios (HTTP Client)
 - **Data Sources:**
-    - TMDb API (Movie and TV Show metadata)
-    - Various streaming APIs (Streaming links)
+  - TMDb API (Movie and TV Show metadata)
+  - Various streaming APIs (Streaming links)
 - **Linting:**
-    - ESLint
+  - ESLint
 
 ## 🚀 Setup
 
@@ -70,14 +74,17 @@ You'll need to set up API keys for TMDb and Supabase.
 The watchlist and continue watching features use [Supabase](https://supabase.com/) for persistence.
 
 1.  **Create a Supabase Project:**
-    *   Go to the [Supabase Dashboard](https://app.supabase.com/) and create a new project.
-    *   Save your **Project URL** and **Project API Key (anon public)**.
+
+    - Go to the [Supabase Dashboard](https://app.supabase.com/) and create a new project.
+    - Save your **Project URL** and **Project API Key (anon public)**.
 
 2.  **Create Database Tables:**
-    *   In your Supabase project, go to the **SQL Editor**.
-    *   Run the following SQL queries to create the necessary tables.
+
+    - In your Supabase project, go to the **SQL Editor**.
+    - Run the following SQL queries to create the necessary tables.
 
     **`user_watchlists` table:**
+
     ```sql
     -- Create the table for user watchlists
     CREATE TABLE user_watchlists (
@@ -117,6 +124,7 @@ The watchlist and continue watching features use [Supabase](https://supabase.com
     ```
 
     **`user_continue_watching` table:**
+
     ```sql
     -- Create the table for continue watching feature
     CREATE TABLE user_continue_watching (
@@ -157,19 +165,21 @@ The watchlist and continue watching features use [Supabase](https://supabase.com
 ### 3. Installation & Setup
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/imkenough/alien-red
     cd alien-red
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 3.  **Set up environment variables:**
-    *   Create a file named `.env` in the root of the project.
-    *   Copy the contents of `.env.example` into it and add your keys:
+    - Create a file named `.env` in the root of the project.
+    - Copy the contents of `.env.example` into it and add your keys:
     ```
     VITE_TMDB_API_KEY=your_tmdb_api_key_here
     VITE_SUPABASE_URL="your_supabase_project_url_here"
@@ -183,7 +193,6 @@ npm run dev
 ```
 
 The application should now be running on `http://localhost:5173`.
-
 
 ## 📜 Available Scripts
 
@@ -240,7 +249,7 @@ alien-streaming-platform/
 
 ```
 
-## 🤝 Contributing    
+## 🤝 Contributing
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).
@@ -250,8 +259,3 @@ alien-streaming-platform/
 6. Open a Pull Request.
 
 Please ensure your code adheres to the project's linting standards (`npm run lint`).
-
-
-
-
-
