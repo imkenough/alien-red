@@ -2,6 +2,18 @@
 
 Alien is a modern streaming platform built with React, TypeScript, and Vite. It allows users to browse, search, and watch a wide variety of movies and TV shows. The platform fetches metadata from The Movie Database (TMDb) and uses VidSrc for streaming content.
 
+## 💖 Support
+Pleae consider Starring this Repository :)
+
+<a href="https://www.star-history.com/#imkenough/alien-red&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=imkenough/alien-red&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=imkenough/alien-red&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=imkenough/alien-red&type=date&legend=top-left" />
+ </picture>
+</a>
+
+
 ## ✨ Features
 
 - **Browse Content:** Discover trending, popular, and top-rated movies and TV shows.
@@ -34,8 +46,8 @@ Alien is a modern streaming platform built with React, TypeScript, and Vite. It 
 
 ### Prerequisites
 
-- [ ] Node.js (v18 or higher recommended)
-- [ ] npm (or yarn/pnpm)
+- [x] Node.js (v18 or higher recommended)
+- [x] npm (or yarn/pnpm)
 - [ ] A TMDb API Key. You'll need to sign up at [TMDb](https://www.themoviedb.org/documentation/api) to get one.
 
 ### Installation & Setup
@@ -115,11 +127,6 @@ alien-streaming-platform/
 6. Open a Pull Request.
 
 Please ensure your code adheres to the project's linting standards (`npm run lint`).
-
-## 💖 Support
-Star this Repository :)
-
-![174794647-0c851917-e5c9-4fb9-bf88-b61d89dc2f4f](https://github.com/user-attachments/assets/df4795f1-3181-43c7-af7f-68eb9b814d1c)
 
 
 
