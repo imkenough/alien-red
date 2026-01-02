@@ -42,7 +42,11 @@ Pleae consider Starring this Repository :)
 - **Linting:**
     - ESLint
 
-## 🚀 Self-Hosting
+## 🚀 Setup
+
+To set up your own instance of Alien, you'll need to configure your environment with API keys for TMDb and Supabase. The following sections provide detailed instructions on how to get these keys and set up your project.
+
+## 🚀 Getting Started
 
 Follow these steps to set up your own instance of Alien.
 
