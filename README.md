@@ -46,8 +46,8 @@ Pleae consider Starring this Repository :)
 
 ### Prerequisites
 
-- [ ] Node.js (v18 or higher recommended)
-- [ ] npm (or yarn/pnpm)
+- [x] Node.js (v18 or higher recommended)
+- [x] npm (or yarn/pnpm)
 - [ ] A TMDb API Key. You'll need to sign up at [TMDb](https://www.themoviedb.org/documentation/api) to get one.
 
 ### Installation & Setup
