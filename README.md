@@ -2,7 +2,20 @@
 
 Alien is a modern streaming platform built with React, TypeScript, and Vite. It allows users to browse, search, and watch a wide variety of movies and TV shows. The platform fetches metadata from The Movie Database (TMDb) and uses VidSrc for streaming content.
 
-## 💖 Support
+## Table of Contents
+
+- [Support](#support)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Setup](#setup)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+
+## Support
 
 Pleae consider Starring this Repository :)
 
@@ -14,11 +27,11 @@ Pleae consider Starring this Repository :)
  </picture>
 </a>
 
-## 🚀 Live Demo
+## Live Demo
 
 [Link to Live Demo](https://www.alienred.ddnsfree.com/)
 
-## ✨ Features
+## Features
 
 - **Browse Content:** Discover trending, popular, and top-rated movies and TV shows.
 - **Detailed Information:** Get comprehensive details for movies and TV series, including cast, crew, trailers, and seasons.
@@ -28,7 +41,7 @@ Pleae consider Starring this Repository :)
 - **Watchlist:** Keep track of content you want to watch. (Implied by `WatchlistContext.tsx`)
 - **Responsive Design:** User interface built with Tailwind CSS and Radix UI components.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:**
   - React
@@ -46,11 +59,11 @@ Pleae consider Starring this Repository :)
 - **Linting:**
   - ESLint
 
-## 🚀 Setup
+## Setup
 
 To set up your own instance of Alien, you'll need to configure your environment with API keys for TMDb and Supabase. The following sections provide detailed instructions on how to get these keys and set up your project.
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these steps to set up your own instance of Alien.
 
@@ -194,14 +207,14 @@ npm run dev
 
 The application should now be running on `http://localhost:5173`.
 
-## 📜 Available Scripts
+## Available Scripts
 
 - `npm run dev`: Starts the development server with hot reloading.
 - `npm run build`: Builds the application for production.
 - `npm run lint`: Lints the codebase using ESLint.
 - `npm run preview`: Serves the production build locally for preview.
 
-## 🚀 Deployment
+## Deployment
 
 This project is configured for deployment with [Vercel](https://vercel.com/).
 
@@ -219,7 +232,7 @@ This project is configured for deployment with [Vercel](https://vercel.com/).
     ```
     Follow the prompts to link your project and deploy. Make sure your `VITE_TMDB_API_KEY`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_ANON_KEY` are set as environment variables in your Vercel project settings.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 alien-streaming-platform/
@@ -249,7 +262,7 @@ alien-streaming-platform/
 
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).
