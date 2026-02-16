@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
   const [featuredItems, setFeaturedItems] = useState<(Movie | TVShow)[]>([]);
   const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState<"left" | "right" | null>(
-    null
+    null,
   );
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -38,14 +38,14 @@ const HomePage: React.FC = () => {
     // Add a small delay to ensure the toast system is ready
     const timer = setTimeout(() => {
       toast({
-        title: "Merry Christmas 🎉 ",
-        description: "It's the most wonderful time of the year  ",
+        title: "Setup account",
+        description: "Setup an Account to save watch history",
         duration: 3500,
-        // action: (
-        //   <Link to="/register">
-        //     <ToastAction altText="Register">Register</ToastAction>
-        //   </Link>
-        // ),
+        action: (
+          <Link to="/register">
+            <ToastAction altText="Register">Register</ToastAction>
+          </Link>
+        ),
       });
     }, 100); // 100ms delay
 
@@ -80,7 +80,7 @@ const HomePage: React.FC = () => {
         setIsTransitioning(false);
       }, TRANSITION_DURATION);
     },
-    [currentFeaturedIndex, featuredItems.length, isTransitioning]
+    [currentFeaturedIndex, featuredItems.length, isTransitioning],
   );
 
   const handleNextHero = useCallback(() => {
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
             } else {
               return await api.getTvDetails(item.id.toString());
             }
-          })
+          }),
         );
         setFeaturedItems(featuredItemsWithDetails);
 
@@ -161,12 +161,12 @@ const HomePage: React.FC = () => {
           moviesData.results.map((movie: Movie) => ({
             ...movie,
             media_type: "movie",
-          }))
+          })),
         );
 
         const tvData = await api.getPopular("tv");
         setPopularTVShows(
-          tvData.results.map((show: TVShow) => ({ ...show, media_type: "tv" }))
+          tvData.results.map((show: TVShow) => ({ ...show, media_type: "tv" })),
         );
       } catch (error) {
       } finally {
@@ -226,7 +226,7 @@ const HomePage: React.FC = () => {
                     first_air_date: "",
                   } as TVShow);
             }
-          })
+          }),
         );
         setContinueWatchingItems(items);
       } catch (error) {}
@@ -249,7 +249,7 @@ const HomePage: React.FC = () => {
 
         // Get items that need to be fetched (not in cache)
         const itemsToFetch = watchlist.filter(
-          (item) => !itemsCache.current.has(item.id)
+          (item) => !itemsCache.current.has(item.id),
         );
 
         if (itemsToFetch.length > 0) {
@@ -286,13 +286,13 @@ const HomePage: React.FC = () => {
                 itemsCache.current.set(item.id, fallbackItem);
                 return fallbackItem;
               }
-            })
+            }),
           );
         }
 
         // Get all items from cache in the correct order
         const orderedItems = watchlist.map(
-          (item) => itemsCache.current.get(item.id)!
+          (item) => itemsCache.current.get(item.id)!,
         );
         setWatchlistItems(orderedItems);
       } catch (error) {
@@ -430,7 +430,7 @@ const HomePage: React.FC = () => {
                   items={continueWatchingItems}
                   renderItem={(item) => {
                     const continueWatchingData = continueWatching.find(
-                      (cw) => cw.id === item.id
+                      (cw) => cw.id === item.id,
                     );
                     return (
                       <MediaCard
