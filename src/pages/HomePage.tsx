@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import { ToastAction } from "@/components/ui/toast";
 import MediaCard from "@/components/MediaCard";
 import { Helmet } from "react-helmet-async";
+// @ts-expect-error - popular-movie-quotes does not have type definitions
+import movieQuote from "popular-movie-quotes";
 
 const AUTO_SCROLL_INTERVAL = 5000; // 5 seconds
 const TRANSITION_DURATION = 500; // 0.5 seconds
@@ -35,22 +37,31 @@ const HomePage: React.FC = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    if (authLoading) return;
+
+    // Get a random quote
+    const quote = movieQuote.getSomeRandom(1)[0];
+
     // Add a small delay to ensure the toast system is ready
     const timer = setTimeout(() => {
       toast({
-        title: "Setup account",
-        description: "Setup an Account to save watch history",
-        duration: 3500,
-        action: (
-          <Link to="/register">
-            <ToastAction altText="Register">Register</ToastAction>
-          </Link>
+        // title: "Movie Quote",
+        description: (
+          <div className="flex flex-col gap-2">
+            <div className="pt-1">
+              <p className="italic text-sm text-foreground">"{quote.quote}"</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                — {quote.movie} ({quote.year})
+              </p>
+            </div>
+          </div>
         ),
+        duration: 5000,
       });
     }, 100); // 100ms delay
 
     return () => clearTimeout(timer);
-  }, [session, authLoading, toast]);
+  }, [toast]);
   const [continueWatchingItems, setContinueWatchingItems] = useState<
     (Movie | TVShow)[]
   >([]);
