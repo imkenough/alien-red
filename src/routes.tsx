@@ -7,6 +7,7 @@ import { LayoutProvider } from "@/contexts/LayoutContext";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Banner from "@/components/layout/Banner";
+import { Toaster } from "@/components/ui/toaster";
 
 import HomePage from "@/pages/HomePage";
 import MoviesPage from "@/pages/MoviesPage";
@@ -64,6 +65,7 @@ const AppRoutes: React.FC = () => {
             </main>
             <Footer />
           </div>
+          <Toaster />
         </WatchlistProvider>
       </LayoutProvider>
     </ThemeProvider>

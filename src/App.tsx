@@ -10,7 +10,6 @@ const App: React.FC = () => {
       <Router>
         <div className="relative z-0 bg-transparent">
           <AppRoutes />
-          <Toaster />
         </div>
       </Router>
     </ErrorBoundary>

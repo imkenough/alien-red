@@ -1,4 +1,6 @@
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from "@/hooks/use-toast";
+import { useLayout } from "@/contexts/LayoutContext";
+import { useEffect } from "react";
 import {
   Toast,
   ToastClose,
@@ -6,10 +8,12 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from '@/components/ui/toast';
+} from "@/components/ui/toast";
+import { cn } from "@/lib/utils";
 
 export function Toaster() {
   const { toasts } = useToast();
+  const { isBannerVisible } = useLayout();
 
   return (
     <ToastProvider>
@@ -27,7 +31,16 @@ export function Toaster() {
           </Toast>
         );
       })}
-      <ToastViewport className="top-0 right-0" />
+      <ToastViewport
+        className={cn(
+          "right-0 flex-col md:max-w-[420px] p-4 transition-all duration-300",
+          // On mobile, position below Header (64px) + Banner (approx 36px)
+          isBannerVisible ? "top-[80px]" : "top-[64px]",
+          // On larger screens, standard top-0 is fine if it's in the corner,
+          // but we'll keep it consistent
+          "sm:top-9",
+        )}
+      />
     </ToastProvider>
   );
 }

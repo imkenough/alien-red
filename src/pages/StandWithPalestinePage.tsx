@@ -10,15 +10,18 @@ const StandWithPalestinePage: React.FC = () => {
       title: "International Law & Court Rulings",
       links: [
         {
-          label: "ICJ 2024 Advisory Opinion - Israel's occupation ruled illegal",
+          label:
+            "ICJ 2024 Advisory Opinion - Israel's occupation ruled illegal",
           url: "https://www.icj-cij.org/case/192",
         },
         {
-          label: "ICJ 2004 Advisory Opinion - Israeli settlements ruled illegal",
+          label:
+            "ICJ 2004 Advisory Opinion - Israeli settlements ruled illegal",
           url: "https://www.icj-cij.org/case/131",
         },
         {
-          label: "UN Security Council Resolution 2334 - Settlements violate international law",
+          label:
+            "UN Security Council Resolution 2334 - Settlements violate international law",
           url: "https://undocs.org/S/RES/2334(2016)",
         },
       ],
@@ -27,11 +30,13 @@ const StandWithPalestinePage: React.FC = () => {
       title: "UN Bodies & Reports",
       links: [
         {
-          label: "UN Commission of Inquiry - Occupation unlawful under international law (2022)",
+          label:
+            "UN Commission of Inquiry - Occupation unlawful under international law (2022)",
           url: "https://www.ohchr.org/en/press-releases/2022/10/commission-inquiry-finds-israeli-occupation-unlawful-under-international-law",
         },
         {
-          label: "UN Legal Study - Israel's occupation exceeds legitimate self-defence (2023)",
+          label:
+            "UN Legal Study - Israel's occupation exceeds legitimate self-defence (2023)",
           url: "https://www.un.org/unispal/document/ceirpp-legal-study2023/",
         },
         {
@@ -57,7 +62,8 @@ const StandWithPalestinePage: React.FC = () => {
       title: "General Explainers",
       links: [
         {
-          label: "Al Jazeera - What is the Israel-Palestine conflict? A simple guide",
+          label:
+            "Al Jazeera - What is the Israel-Palestine conflict? A simple guide",
           url: "https://www.aljazeera.com/news/2023/10/9/whats-the-israel-palestine-conflict-about-a-simple-guide",
         },
       ],
@@ -76,7 +82,10 @@ const StandWithPalestinePage: React.FC = () => {
       <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container max-w-4xl px-4 sm:px-6">
           <Link to="/">
-            <Button variant="ghost" className="mb-6 sm:mb-8 hover:bg-white/5 -ml-2 text-sm sm:text-base">
+            <Button
+              variant="ghost"
+              className="mb-6 sm:mb-8 hover:bg-white/5 -ml-2 text-sm sm:text-base"
+            >
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
             </Button>
           </Link>
@@ -88,16 +97,15 @@ const StandWithPalestinePage: React.FC = () => {
               </h1>
               <div className="prose prose-invert max-w-none text-base sm:text-lg text-muted-foreground leading-relaxed space-y-4">
                 <p>
-                  This is not just a gesture. The Palestinian cause is one
-                  of the most thoroughly documented human rights issues of our time
+                  This is not just a gesture. The Palestinian cause is one of
+                  the most thoroughly documented human rights issues of our time
                   - ruled on by international courts, investigated by
                   independent bodies, and confirmed even by Israel's own
                   classified legal documents.
                 </p>
                 <p>
-                  Below are primary sources - not opinion pieces, articles and
-                  documents that lay out the legal and humanitarian case
-                  clearly.
+                  Below are primary sources - not opinion pieces, that lay out
+                  the legal and humanitarian case clearly.
                 </p>
               </div>
             </header>
@@ -133,14 +141,20 @@ const StandWithPalestinePage: React.FC = () => {
               <div className="p-5 sm:p-8 rounded-xl bg-primary/5 border border-primary/20 space-y-4">
                 <div className="flex items-center gap-2 text-primary">
                   <Heart className="h-5 w-5 fill-current" />
-                  <h3 className="text-lg sm:text-xl font-semibold">Do more than read</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold">
+                    Do more than read
+                  </h3>
                 </div>
                 <p className="text-sm sm:text-base text-muted-foreground">
                   If you want to do more than read, consider supporting these
                   organizations providing critical aid:
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
-                  <Button asChild variant="default" className="w-full sm:w-auto">
+                  <Button
+                    asChild
+                    variant="default"
+                    className="w-full sm:w-auto"
+                  >
                     <a
                       href="https://www.pcrf.net/"
                       target="_blank"
