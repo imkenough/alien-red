@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { WatchlistProvider } from "@/contexts/WatchlistContext";
+import { LayoutProvider } from "@/contexts/LayoutContext";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -33,32 +34,34 @@ const AppRoutes: React.FC = () => {
 
   return (
     <ThemeProvider>
-      <WatchlistProvider>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/movies" element={<MoviesPage />} />
-              <Route path="/tv" element={<TVShowsPage />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/watchlist" element={<ProtectedRoute><WatchlistPage /></ProtectedRoute>} />
-              
-              <Route path="/genres" element={<GenresPage />} />
-              <Route path="/genres/:genreId" element={<GenresPage />} />
-              <Route path="/:mediaType/:id" element={<MediaDetailsPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </WatchlistProvider>
+      <LayoutProvider>
+        <WatchlistProvider>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/movies" element={<MoviesPage />} />
+                <Route path="/tv" element={<TVShowsPage />} />
+                <Route path="/search" element={<SearchPage />} />
+                <Route path="/watchlist" element={<ProtectedRoute><WatchlistPage /></ProtectedRoute>} />
+                
+                <Route path="/genres" element={<GenresPage />} />
+                <Route path="/genres/:genreId" element={<GenresPage />} />
+                <Route path="/:mediaType/:id" element={<MediaDetailsPage />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="/privacy" element={<PrivacyPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </WatchlistProvider>
+      </LayoutProvider>
     </ThemeProvider>
   );
 };

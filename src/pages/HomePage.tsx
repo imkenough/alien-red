@@ -435,7 +435,7 @@ const HomePage: React.FC = () => {
 
             {/* Continue Watching Section */}
             {continueWatchingItems.length > 0 && (
-              <div className="px-4 sm:px-6 md:px-8">
+              <div className="container">
                 <MediaCarousel
                   title="Continue Watching"
                   items={continueWatchingItems}
@@ -470,23 +470,23 @@ const HomePage: React.FC = () => {
 
             {/* Watchlist Section */}
             {watchlist.length > 0 && (
-              <div className="px-4 sm:px-6 md:px-8">
+              <div className="container">
                 <MediaCarousel title="My Watchlist" items={watchlistItems} />
               </div>
             )}
 
             {/* Trending Section */}
-            <div className="px-4 sm:px-6 md:px-8">
+            <div className="container">
               <MediaCarousel title="Trending Now" items={trendingAll} />
             </div>
 
             {/* Popular Movies Section */}
-            <div className="px-4 sm:px-6 md:px-8">
+            <div className="container">
               <MediaCarousel title="Popular Movies" items={popularMovies} />
             </div>
 
             {/* Popular TV Shows Section */}
-            <div className="px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-16">
+            <div className="container pb-8 sm:pb-12 md:pb-16">
               <MediaCarousel title="Popular TV Shows" items={popularTVShows} />
             </div>
           </div>

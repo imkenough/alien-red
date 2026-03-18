@@ -94,7 +94,11 @@
 
 @layer components {
   .container {
-    @apply max-w-7xl mx-auto px-[var(--container-padding)];
+    @apply max-w-7xl mx-auto px-[var(--container-padding)] transition-[max-width] duration-300 ease-in-out;
+  }
+
+  .layout-fluid .container {
+    @apply max-w-none;
   }
 
   .btn {

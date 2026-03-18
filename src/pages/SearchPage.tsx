@@ -85,7 +85,7 @@ const SearchPage: React.FC = () => {
         <meta name="twitter:image" content="/favicon.svg" />
       </Helmet>
       <div className="min-h-screen">
-        <div className="px-4 sm:px-6 md:px-8 pt-24 pb-12">
+        <div className="container pt-24 pb-12">
           <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Search</h1>
 
           <form onSubmit={handleSearch} className="mb-6 sm:mb-8">

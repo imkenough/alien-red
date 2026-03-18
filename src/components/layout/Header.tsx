@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Film, Home, Menu, Search, X, Cigarette, List, LogOut } from "lucide-react";
+import { Film, Home, Menu, Search, X, Cigarette, List, LogOut, Maximize, Minimize } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useLayout } from "@/contexts/LayoutContext";
 import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import {
   Sheet,
   SheetContent,
@@ -22,6 +29,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const { session } = useAuth();
+  const { layoutMode, toggleLayout } = useLayout();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -119,6 +127,29 @@ const Header: React.FC = () => {
 
         {/* Auth Buttons and Hamburger Menu */}
         <div className="flex items-center gap-2 sm:gap-4">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={toggleLayout}
+                  className="hidden md:flex hover:bg-white/5"
+                  aria-label="Toggle Layout"
+                >
+                  {layoutMode === "contained" ? (
+                    <Maximize className="h-5 w-5" />
+                  ) : (
+                    <Minimize className="h-5 w-5" />
+                  )}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{layoutMode === "contained" ? "Switch to Full Width" : "Switch to Contained"}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
           {!session ? (
             <>
               <Link to="/login">
