@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         ),
-        duration: 5000,
+        duration: 2000,
       });
     }, 100); // 100ms delay
 
