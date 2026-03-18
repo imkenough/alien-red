@@ -23,6 +23,7 @@ import ContactPage from "@/pages/ContactPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
+import StandWithPalestinePage from "@/pages/StandWithPalestinePage";
 
 
 const AppRoutes: React.FC = () => {
@@ -57,6 +58,7 @@ const AppRoutes: React.FC = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/stand-with-palestine" element={<StandWithPalestinePage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </main>

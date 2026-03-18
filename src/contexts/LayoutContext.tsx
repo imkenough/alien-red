@@ -22,7 +22,9 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
   });
 
   const [bannerMessage, setBannerMessage] = useState<string>(() => {
-    return localStorage.getItem("bannerMessage") || "Viva Palestina";
+    return (
+      localStorage.getItem("bannerMessage") || "Alienred stands with Palestine."
+    );
   });
 
   const [isBannerVisible, setBannerVisible] = useState<boolean>(true);
