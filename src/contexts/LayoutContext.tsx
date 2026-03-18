@@ -22,7 +22,7 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
   });
 
   const [bannerMessage, setBannerMessage] = useState<string>(() => {
-    return localStorage.getItem("bannerMessage") || "Welcome to Alien! Enjoy our huge collection of movies and TV shows.";
+    return localStorage.getItem("bannerMessage") || "Viva Palestina";
   });
 
   const [isBannerVisible, setBannerVisible] = useState<boolean>(true);
@@ -46,14 +46,16 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [bannerMessage]);
 
   return (
-    <LayoutContext.Provider value={{ 
-      layoutMode, 
-      toggleLayout, 
-      bannerMessage, 
-      setBannerMessage,
-      isBannerVisible,
-      setBannerVisible
-    }}>
+    <LayoutContext.Provider
+      value={{
+        layoutMode,
+        toggleLayout,
+        bannerMessage,
+        setBannerMessage,
+        isBannerVisible,
+        setBannerVisible,
+      }}
+    >
       {children}
     </LayoutContext.Provider>
   );
