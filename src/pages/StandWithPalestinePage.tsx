@@ -110,6 +110,43 @@ const StandWithPalestinePage: React.FC = () => {
               </div>
             </header>
 
+            {/* New Politics Section */}
+            <section className="space-y-6 py-8 border-y border-border/50">
+              <h2 className="text-2xl sm:text-3xl font-bold italic">
+                "I'm not really into politics."
+              </h2>
+              <div className="prose prose-invert max-w-none text-base sm:text-lg text-muted-foreground leading-relaxed space-y-4">
+                <p>
+                  Cool. Neither were the people who looked the other way during
+                  every other atrocity in history.
+                </p>
+                <p>
+                  You don't have to have an opinion on tax policy or
+                  parliamentary procedure. But when international courts, UN
+                  investigators, and human rights organizations all reach the
+                  same conclusion - that an occupation is illegal, that war
+                  crimes are being committed, that children are being killed -
+                  "not being into politics" is just a more comfortable way of
+                  saying you've chosen a side. The side that benefits from your
+                  silence.
+                </p>
+                <p className="font-medium text-foreground">
+                  In the immortal words of Jonathan Pie:
+                </p>
+              </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border/50 bg-black shadow-2xl">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/PpC1joydTFo?autoplay=1&mute=1&cc_load_policy=1"
+                  title="You’re not really into politics?"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>{" "}
+            </section>
+
             <div className="grid gap-10 sm:gap-12 mt-8 sm:mt-12">
               {sections.map((section) => (
                 <section key={section.title} className="space-y-4">
