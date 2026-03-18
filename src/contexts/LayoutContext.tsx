@@ -5,6 +5,10 @@ type LayoutMode = "contained" | "fluid";
 interface LayoutContextType {
   layoutMode: LayoutMode;
   toggleLayout: () => void;
+  bannerMessage: string;
+  setBannerMessage: (msg: string) => void;
+  isBannerVisible: boolean;
+  setBannerVisible: (visible: boolean) => void;
 }
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
@@ -16,6 +20,12 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
     const saved = localStorage.getItem("layoutMode");
     return (saved as LayoutMode) || "contained";
   });
+
+  const [bannerMessage, setBannerMessage] = useState<string>(() => {
+    return localStorage.getItem("bannerMessage") || "Welcome to Alien! Enjoy our huge collection of movies and TV shows.";
+  });
+
+  const [isBannerVisible, setBannerVisible] = useState<boolean>(true);
 
   const toggleLayout = () => {
     setLayoutMode((prev) => (prev === "contained" ? "fluid" : "contained"));
@@ -31,8 +41,19 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [layoutMode]);
 
+  useEffect(() => {
+    localStorage.setItem("bannerMessage", bannerMessage);
+  }, [bannerMessage]);
+
   return (
-    <LayoutContext.Provider value={{ layoutMode, toggleLayout }}>
+    <LayoutContext.Provider value={{ 
+      layoutMode, 
+      toggleLayout, 
+      bannerMessage, 
+      setBannerMessage,
+      isBannerVisible,
+      setBannerVisible
+    }}>
       {children}
     </LayoutContext.Provider>
   );

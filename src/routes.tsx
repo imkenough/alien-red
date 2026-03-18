@@ -6,6 +6,7 @@ import { LayoutProvider } from "@/contexts/LayoutContext";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Banner from "@/components/layout/Banner";
 
 import HomePage from "@/pages/HomePage";
 import MoviesPage from "@/pages/MoviesPage";
@@ -37,6 +38,7 @@ const AppRoutes: React.FC = () => {
       <LayoutProvider>
         <WatchlistProvider>
           <div className="flex flex-col min-h-screen">
+            <Banner />
             <Header />
             <main className="flex-1">
               <Routes>

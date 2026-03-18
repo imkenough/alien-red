@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Film, Home, Menu, Search, X, Cigarette, List, LogOut, Maximize, Minimize } from "lucide-react";
+import { Film, Home, Menu, Search, X, Cigarette, List, LogOut, Maximize, Minimize, Megaphone } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLayout } from "@/contexts/LayoutContext";
 import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Sheet,
   SheetContent,
@@ -23,13 +33,25 @@ import { cn } from "@/lib/utils";
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [newBannerMessage, setNewBannerMessage] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isGenresPage = location.pathname.startsWith("/genres");
   const navigate = useNavigate();
 
   const { session } = useAuth();
-  const { layoutMode, toggleLayout } = useLayout();
+  const { layoutMode, toggleLayout, isBannerVisible, bannerMessage, setBannerMessage, setBannerVisible } = useLayout();
+
+  useEffect(() => {
+    setNewBannerMessage(bannerMessage);
+  }, [bannerMessage]);
+
+  const handleUpdateBanner = () => {
+    setBannerMessage(newBannerMessage);
+    setBannerVisible(true);
+    setIsDialogOpen(false);
+  };
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -72,7 +94,8 @@ const Header: React.FC = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
+        "fixed left-0 right-0 z-[100] transition-all duration-300",
+        isBannerVisible ? "top-[36px]" : "top-0",
         isScrolled || !isHomePage
           ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg"
           : "bg-gradient-to-b from-background/90 to-transparent border-transparent"
@@ -149,6 +172,46 @@ const Header: React.FC = () => {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
+
+          {session && (
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hidden md:flex hover:bg-white/5"
+                  aria-label="Change Banner Message"
+                >
+                  <Megaphone className="h-5 w-5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Update Banner Message</DialogTitle>
+                  <DialogDescription>
+                    This message will be displayed at the top of all pages.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex items-center space-x-2 py-4">
+                  <Input
+                    id="banner-message"
+                    value={newBannerMessage}
+                    onChange={(e) => setNewBannerMessage(e.target.value)}
+                    placeholder="Enter new banner message..."
+                    className="flex-1"
+                  />
+                </div>
+                <DialogFooter className="sm:justify-end">
+                  <Button type="button" variant="secondary" onClick={() => setIsDialogOpen(false)}>
+                    Cancel
+                  </Button>
+                  <Button type="button" onClick={handleUpdateBanner}>
+                    Save Changes
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          )}
 
           {!session ? (
             <>
