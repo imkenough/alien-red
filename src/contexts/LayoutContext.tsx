@@ -21,10 +21,18 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
     return (saved as LayoutMode) || "contained";
   });
 
+  const DEFAULT_BANNER_MESSAGE = "Alienred stands with Palestine.";
+
   const [bannerMessage, setBannerMessage] = useState<string>(() => {
-    return (
-      localStorage.getItem("bannerMessage") || "Alienred stands with Palestine."
-    );
+    const saved = localStorage.getItem("bannerMessage");
+    const lastDefault = localStorage.getItem("lastDefaultBannerMessage");
+
+    // If there's no saved message, or if the saved message was the PREVIOUS default
+    // and we have a NEW default, update it.
+    if (!saved || saved === lastDefault) {
+      return DEFAULT_BANNER_MESSAGE;
+    }
+    return saved;
   });
 
   const [isBannerVisible, setBannerVisible] = useState<boolean>(true);
@@ -45,6 +53,11 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     localStorage.setItem("bannerMessage", bannerMessage);
+    // If the message being saved matches our current code default,
+    // track that this was the default used.
+    if (bannerMessage === DEFAULT_BANNER_MESSAGE) {
+      localStorage.setItem("lastDefaultBannerMessage", DEFAULT_BANNER_MESSAGE);
+    }
   }, [bannerMessage]);
 
   return (

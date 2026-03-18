@@ -25,7 +25,7 @@ const Banner: React.FC = () => {
   if (!isBannerVisible || !bannerMessage) return null;
 
   return (
-    <div className="relative z-[110] bg-[#141414] text-white py-2 px-4 shadow-md border-b border-white/10 animate-in fade-in slide-in-from-top duration-500">
+    <div className="sticky top-0 left-0 right-0 z-[110] bg-[#141414] text-white py-2 px-4 shadow-md border-b border-white/10 animate-in fade-in slide-in-from-top duration-500">
       <div className="container mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <PalestineFlag className="shrink-0 shadow-sm rounded-[1px]" />
