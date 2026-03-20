@@ -202,8 +202,8 @@ const StandWithPalestinePage: React.FC = () => {
                   </Button>
                   <Button
                     asChild
-                    variant="outline"
-                    className="w-full sm:w-auto bg-transparent border-primary/50 text-primary hover:bg-primary/10"
+                    variant="default"
+                    className="w-full sm:w-auto"
                   >
                     <a
                       href="https://www.unrwa.org/"
