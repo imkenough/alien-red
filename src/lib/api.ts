@@ -1,19 +1,26 @@
 import axios from "axios";
 
 // TMDb API configuration
-const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
 
 // VidSrc API (free streaming API)
 const VIDSRC_BASE_URL = "https://vidsrc.xyz/embed";
 
-// Create an axios instance for TMDb API
+// Create an axios instance for TMDb API (Proxying through Vercel serverless function)
 const tmdbApi = axios.create({
-  baseURL: TMDB_BASE_URL,
-  params: {
-    api_key: TMDB_API_KEY,
-  },
+  baseURL: "/api/tmdb",
+});
+
+// Interceptor to transform path into a query parameter for the proxy
+tmdbApi.interceptors.request.use((config) => {
+  if (config.url) {
+    config.params = {
+      ...config.params,
+      path: config.url,
+    };
+    config.url = ""; // Clear url since we're using baseURL as the full proxy endpoint
+  }
+  return config;
 });
 
 // Add response interceptor for error handling
